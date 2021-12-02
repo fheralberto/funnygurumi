@@ -1,0 +1,24 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.contenedor {
+  height: 100vh;
+  /* align-items: center; */
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.card {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  /* width: 320px; */
+  /* border: 1px solid gray; */
+}
+input {
+  width: 60%;
+  align-self: center;
+  margin-bottom: 20px;
+}
