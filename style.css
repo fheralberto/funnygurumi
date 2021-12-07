@@ -5,20 +5,56 @@
 }
 .contenedor {
   height: 100vh;
-  /* align-items: center; */
-  justify-content: center;
   display: flex;
+  align-items: center;
+  /* justify-content: center; */
   flex-direction: column;
+  /* background-color: #C2D2C4; */
+  background-image: url('./img/edificios.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: scroll;
+  /* padding: 2%; */
+}
+.select{
+  color: white;
+}
+.figuras{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* height: 100vh; */
+  width: 100%;
 }
 .card {
-  justify-content: center;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   /* width: 320px; */
   /* border: 1px solid gray; */
+  /* padding-bottom: 15px; */
+  height: 97vh;
 }
+.canvas{
+  /* border: 1px solid gray; */
+  max-height: 70vh;
+  /* margin-top: 8%; */
+  border-radius: 50%;
+}
+
 input {
-  width: 60%;
+  /* width: 60%; */
   align-self: center;
-  margin-bottom: 20px;
+  margin-top: 4%;
 }
+/* @media(min-width: 720px) {
+  .canvas{
+    width: fit-content;
+    align-self: center;
+  }  
+} */
+/* @media(min-height: 420px){
+  .canvas{
+    margin: 0;
+  }
+} */
