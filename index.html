@@ -7,25 +7,26 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>funnygurumi</title>
   <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
   <div class="contenedor">
     <div class="figuras">
       <div class="card">
-        <canvas id="canvas01" width="480" height="760" class="canvas"></canvas>
+        <canvas id="canvas01" width="480" height="640" class="canvas"></canvas>
         <!-- Por defecto empieza a la mitad del range
       se le asignó el valor 1 para iniciar ahí -->
-        <input type="range" min="1" max="36" step="1" value="1" id="slider01">
+        <input type="range" min="1" max="37" step="1" value="1" id="slider01" class="rango">
       </div>
       <div class="card">
-        <canvas id="canvas02" width="480" height="760" class="canvas"></canvas>
-        <input type="range" min="1" max="36" step="1" value="1" id="slider02">
+        <canvas id="canvas02" width="480" height="640" class="canvas"></canvas>
+        <input type="range" min="1" max="37" step="1" value="1" id="slider02" class="rango">
       </div>
-      <div class="card pato">
-        <canvas id="canvas03" width="480" height="760" class="canvas"></canvas>
-        <input type="range" min="1" max="36" step="1" value="1" id="slider03">
+      <div class="card">
+        <canvas id="canvas03" width="480" height="640" class="canvas"></canvas>
+        <input type="range" min="1" max="37" step="1" value="1" id="slider03" class="rango">
       </div>
     </div>
   </div>
