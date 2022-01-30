@@ -1,0 +1,78 @@
+/* -----------logo------------------- */
+.fheralberto{
+  position: fixed;
+  height: 26px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 20;
+  opacity: 1;
+  transition: opacity 1s;
+}
+.fheralberto span{
+  color: white;
+  font-size: .5rem;
+  display: none;
+}
+svg#logo{
+  height: 100%;
+}
+
+.footer #logo .f,
+.footer #logo .a{
+  fill: transparent;
+  stroke: white;
+  stroke-width: 1px;
+}
+
+/* stroke-dasharray - 
+  Define la longitud del trazo
+stroke-dashoffset - 
+  Define cada cuanto aparece un trazo */
+.footer #logo .f{
+  stroke-dasharray: 93px;
+  stroke-dashoffset: -93px;
+  animation: efecto-carta 1s 1s linear forwards;
+}
+.footer #logo .a{
+  stroke-dasharray: 75px;
+  stroke-dashoffset: -75px;
+  animation: efecto-carta 1s 2.1s linear forwards;
+}
+@keyframes efecto-carta {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/* fill:#c9002b;
+fill:#004b93; */
+
+/* ----------------WhatsApp----------------------- */
+.whatsapp{
+  text-decoration: none;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  font-size: 2.2rem;
+  color: #4FCE5D;
+  z-index: 20;  
+  opacity: 1;
+  transition: opacity 1s;
+}
+.main .desvanecer,
+.main a.desvanecer
+{
+  opacity: 0;
+}
+
+.whatsapp span{
+  font-size: 1rem;
+  color: white;
+  display: none;
+}
+
+@media (min-width: 500px) {
+  .fheralberto span,
+  .whatsapp span{
+    display: inline-block;
+  }
+}

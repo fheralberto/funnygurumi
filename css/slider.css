@@ -1,0 +1,140 @@
+section {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  max-width: 1280px;
+  bottom: 0;
+  padding: 0 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url('../img/edificios.jpg'); */
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  transition: opacity 1s;
+}
+section .swiper-slide .image {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  background-color: #7d2ae8;
+  padding: 3px;
+  z-index: 1;
+  cursor: pointer;
+}
+section .swiper-slide .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
+}
+.swiper-slide {
+  position: relative;
+  background-color: white;
+  /* background-color: rgba(255,255,255, .2); */
+  border-radius: 20px;
+}
+.swiper-slide::before {
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 100%;
+  /* background-color: rgba(125, 42, 232,.7); */
+  background-color: #7d2ae8;
+  border-radius: 20px 20px 0 0;
+}
+.swiper-slide .card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.swiper-slide .descripcion {
+  color: #333;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-top: 10px;
+  text-align: center;
+}
+.swiper-slide .autor {
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+}
+.swiper-slide .botones {
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+  padding: 20px 0;
+  max-width: 220px;
+}
+.swiper-slide .botones button {
+  outline: none;
+  border: none;
+  width: 100px;
+  padding: 8px 0;
+  font-size: 14px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+  background-color: #7d2ae8;
+  color: white;
+}
+.swiper-slide .botones button:hover {
+  cursor: pointer;
+  background-color: #6616d0;
+}
+.swiper-slide .botones .deshabilitado {
+  background-color: gray;
+  color: lightgray;
+}
+.swiper-slide .botones .deshabilitado:hover {
+  cursor: not-allowed;
+  background-color: gray;
+  color: lightgray;
+}
+.btnVolver{
+  position: fixed;
+  margin: 0;
+  top: 22px;
+  left: 15px;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 10;
+}
+.btnVolver:hover{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.swiper-horizontal > .swiper-pagination-bullets{
+  bottom: 7px;
+}
+
+@media (min-width: 568px) {
+  .swiper-horizontal > .swiper-pagination-bullets{
+    text-align: left;
+    padding-left: 85px;
+  }
+}
+@media (min-width: 736px){
+  .swiper-horizontal > .swiper-pagination-bullets{
+    text-align: center;
+    padding: 0;
+    bottom: 7px;
+  }
+}
+@media (min-width: 1080px) {
+  .swiper-horizontal > .swiper-pagination-bullets{
+    text-align: left;
+    padding-left: 85px;
+  }
+}

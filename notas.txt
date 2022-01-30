@@ -1,0 +1,73 @@
+link whatsapp
+https://walink.co/ea136b
+Se obtiene en:
+https://walink.co/
+
+Efecto vidrio
+https://www.youtube.com/watch?v=3HRvb2tLqF4
+
+Galería de hexágonos
+https://www.youtube.com/watch?v=jDTKPSKp9dY&list=PLQ2swYBe_VzP8W7p4Pq1P4h8Jo_wjC_e4&index=36
+
+machas de pintura con hover
+https://www.youtube.com/watch?v=T8FqjoX9ew0&list=PLQ2swYBe_VzOiglLOevrNDe9-iq_U2io_&index=4
+
+slider
+https://www.youtube.com/watch?v=BKKcGb80MOs&t=268s
+
+Eliminar eventListener
+https://www.delftstack.com/es/howto/javascript/remove-event-listener/
+Este tutorial enseña cómo eliminar un detector de eventos en JavaScript.
+
+stroke-dasharray - Define la longitud del trazo
+stroke-dashoffset - Define cada cuanto aparece un trazo
+
+
+Utilice el método removeEventListener() 
+para eliminar el detector de eventos en JavaScript
+Si creamos un elemento 
+y no queremos que realice su comportamiento previsto 
+cuando el usuario interactúa con él, 
+tenemos que eliminar el detector de eventos de ese elemento. 
+Logramos esto usando la función incorporada de JavaScript removeEventListener() 
+Esta función elimina el detector de eventos adjunto de un elemento 
+y detiene su acción predefinida. 
+Podemos deshabilitar un clic en un botón eliminando el detector de eventos adjunto.
+
+La función acepta los siguientes parámetros:
+
+type: 
+	Es una cadena que especifica el tipo de acción del usuario 
+	para la que queremos eliminar el detector de eventos.
+listener: 
+	La función de escucha de eventos que queremos eliminar de dicho elemento.
+options: 
+	es un parámetro opcional que ayuda a especificar las características del oyente del evento. 
+	Se pueden configurar las siguientes opciones:
+		capture: 
+			Es una variable booleana que dice que el evento irá al oyente registrado 
+			antes de pasar a cualquier evento de destino en el árbol DOM.
+		mozSystemGroup: 
+			una variable booleana que indica que el detector de eventos se agregará al grupo del sistema. 
+			Está disponible solo para código que se ejecuta en Chrome de XBL / Firefox.
+useCapture: 
+	Es una variable booleana que indica si el oyente de eventos es un oyente de captura. 
+	También es un parámetro opcional.
+
+var element_name = document.querySelector('#btn');
+var count = 0;
+var counter = function(event) {
+    count++; 
+    // perform the intended function in case of occurence of event 
+    if(count == 2){ 
+        this.removeEventListener('click', myHandler);
+    } 
+}
+element_name.addEventListener('click', counter);
+
+En el código anterior, agregamos un detector de eventos y especificamos la función a realizar si se activa el detector. 
+Si el usuario intenta activar el mismo detector de nuevo, eliminamos el detector de eventos usando removeEventListener(). 
+Logramos esto seleccionando primero el elemento en el que queremos agregar / eliminar el detector de eventos. 
+Luego, inicializamos un contador para mantener el recuento del número de clics. 
+Finalmente, declaramos que el controlador de eventos dispara y también incrementa el recuento. 
+En caso de que el usuario haga clic dos veces, se activa removeEventListener().
