@@ -65,6 +65,10 @@ section .swiper-slide .image img {
   font-size: 15px;
   font-weight: 500;
 }
+.swiper-slide .autor span{
+  font-weight: 700;
+  text-transform: capitalize;
+}
 .swiper-slide .botones {
   width: 100%;
   display: flex;
