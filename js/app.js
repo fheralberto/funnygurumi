@@ -27,6 +27,7 @@ const datosGaleria = [
   { 'nombre': '06', 'autor': 'norma', 'alt': 'batman', 'disp': true },
   { 'nombre': '07', 'autor': 'norma', 'alt': 'osito', 'disp': false },
   { 'nombre': '08', 'autor': 'norma', 'alt': 'miniom', 'disp': true },
+  { 'nombre': '09', 'autor': 'norma', 'alt': 'girasol y tulipanes', 'disp': false },
   { 'nombre': '101', 'autor': 'rosalia', 'alt': 'mapache', 'disp': false },
   { 'nombre': '102', 'autor': 'rosalia', 'alt': 'elefante', 'disp': true },
   { 'nombre': '103', 'autor': 'rosalia', 'alt': 'Juan Carlos Bodoque', 'disp': false },
@@ -34,6 +35,9 @@ const datosGaleria = [
   { 'nombre': '105', 'autor': 'rosalia', 'alt': 'patito claro', 'disp': false },
   { 'nombre': '106', 'autor': 'rosalia', 'alt': 'minecraft', 'disp': false },
   { 'nombre': '107', 'autor': 'rosalia', 'alt': 'osita rosada', 'disp': false },
+  { 'nombre': '108', 'autor': 'rosalia', 'alt': 'bodoque sin boca', 'disp': false },
+  { 'nombre': '109', 'autor': 'rosalia', 'alt': 'baby yoda', 'disp': true },
+  { 'nombre': '110', 'autor': 'rosalia', 'alt': 'rana rene', 'disp': true },
   { 'nombre': '201', 'autor': 'rosalia', 'alt': 'bosa tipo smokin', 'disp': true }
 ]
 let hijos = galeria.childNodes.length
@@ -119,7 +123,7 @@ function mostrarGaleria(max) {
   let lista = [];
   for (let i = 0; i < max; i++) {
     do{
-      aleatorio = aleatorioEntero(0, 14);
+      aleatorio = aleatorioEntero(0, 18);
     }
     while(lista.includes(aleatorio));
     lista.push(aleatorio);
