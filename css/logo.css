@@ -10,10 +10,10 @@
 }
 .fheralberto span{
   position: absolute;
-  top: -15px;
-  right: -5px;
+  top: -16px;
+  right: -8px;
   color: white;
-  font-size: .5rem;
+  font-size: 12px;
 }
 svg#logo{
   height: 100%;
@@ -70,7 +70,7 @@ fill:#004b93; */
   position: absolute;
   top: -15px;
   left: -35px;
-  font-size: .5rem;
+  font-size: 12px;
   color: white;
 }
 
