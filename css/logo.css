@@ -9,9 +9,11 @@
   transition: opacity 1s;
 }
 .fheralberto span{
+  position: absolute;
+  top: -15px;
+  right: -5px;
   color: white;
   font-size: .5rem;
-  display: none;
 }
 svg#logo{
   height: 100%;
@@ -51,8 +53,8 @@ fill:#004b93; */
   text-decoration: none;
   position: fixed;
   bottom: 10px;
-  left: 10px;
-  font-size: 2.2rem;
+  left: 40px;
+  font-size: 1.2rem;
   color: #4FCE5D;
   z-index: 20;  
   opacity: 1;
@@ -65,14 +67,26 @@ fill:#004b93; */
 }
 
 .whatsapp span{
-  font-size: 1rem;
+  position: absolute;
+  top: -15px;
+  left: -35px;
+  font-size: .5rem;
   color: white;
-  display: none;
 }
 
-@media (min-width: 500px) {
-  .fheralberto span,
+@media (min-width: 360px) {
+  .whatsapp{
+    left: 10px;
+  }
   .whatsapp span{
-    display: inline-block;
+    position: static;
+  }
+}
+@media (min-width: 568px){
+  .whatsapp{
+    font-size: 2.2rem;
+  }
+  .whatsapp span{
+    font-size: 1rem;
   }
 }
