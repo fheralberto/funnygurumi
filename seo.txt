@@ -1,8 +1,31 @@
-Google search console
+1.-Verificar propiedades en Google search console. Hay 2 tipos:
+  - Prefijo de la URL
+    Se introduce la URL a verificar
+      https://funnygurumi.netlify.app
+      https://tejirumis.com
+    En este caso se copió la etiqueta meta generada, 
+    se pegó en el head del html del proyecto,
+    se hizo push and pull 
+    y se dió click a VERIFICAR en Google search console
+  - Dominio
+    Se introduce el dominio a verificar
+      tejirumis.com
+    Copiar el registro TXT
+    en https://app.netlify.com/teams/fheralberto/dns/tejirumis.com
+    Click - Add new record
+    Seleccionar - type TXT
+    pegar el registro TXT
 
-Generador de sitemaps.xml
-https://www.xml-sitemaps.com/
+2.-Indexar manualmente en Google
+  Inspeccionar URL en Google search console
+    http://tejirumis.com/
+    https://tejirumis.com/
+  Solicitar indexación
 
-Ejeplo de diferentes tipos de sitemaps:
-https://gist.github.com/jorgejaramillo/1e344013024d0e8f50874871bee2d2a3
+3.-Sitemaps
+  Generador de sitemaps.xml
+  https://www.xml-sitemaps.com/
+
+  Ejemplo de diferentes tipos de sitemaps:
+  https://gist.github.com/jorgejaramillo/1e344013024d0e8f50874871bee2d2a3
 

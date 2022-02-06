@@ -56,17 +56,18 @@ section .swiper-slide .image img {
   color: #333;
   font-size: 15px;
   font-weight: 600;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   padding-top: 10px;
   text-align: center;
 }
 .swiper-slide .autor {
   color: #333;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 400;
 }
 .swiper-slide .autor span{
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 500;
   text-transform: capitalize;
 }
 .swiper-slide .botones {

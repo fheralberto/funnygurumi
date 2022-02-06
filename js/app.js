@@ -19,26 +19,26 @@ const mediaQueryList = [
   window.matchMedia("(min-height: 812px)")
 ]
 const datosGaleria = [
-  { 'nombre': '01', 'autor': 'norma', 'alt': 'cochinito', 'disp': true },
-  { 'nombre': '02', 'autor': 'norma', 'alt': 'patito', 'disp': true },
-  { 'nombre': '03', 'autor': 'norma', 'alt': 'reno verde', 'disp': true },
-  { 'nombre': '04', 'autor': 'norma', 'alt': 'reno rojo', 'disp': true },
-  { 'nombre': '05', 'autor': 'norma', 'alt': 'olaf', 'disp': true },
-  { 'nombre': '06', 'autor': 'norma', 'alt': 'batman', 'disp': true },
-  { 'nombre': '07', 'autor': 'norma', 'alt': 'osito', 'disp': false },
-  { 'nombre': '08', 'autor': 'norma', 'alt': 'miniom', 'disp': true },
-  { 'nombre': '09', 'autor': 'norma', 'alt': 'girasol y tulipanes', 'disp': false },
-  { 'nombre': '101', 'autor': 'rosalia', 'alt': 'mapache', 'disp': false },
-  { 'nombre': '102', 'autor': 'rosalia', 'alt': 'elefante', 'disp': true },
-  { 'nombre': '103', 'autor': 'rosalia', 'alt': 'Juan Carlos Bodoque', 'disp': false },
-  { 'nombre': '104', 'autor': 'rosalia', 'alt': 'osito con mameluco', 'disp': false },
-  { 'nombre': '105', 'autor': 'rosalia', 'alt': 'patito claro', 'disp': false },
-  { 'nombre': '106', 'autor': 'rosalia', 'alt': 'minecraft', 'disp': false },
-  { 'nombre': '107', 'autor': 'rosalia', 'alt': 'osita rosada', 'disp': false },
-  { 'nombre': '108', 'autor': 'rosalia', 'alt': 'bodoque sin boca', 'disp': false },
-  { 'nombre': '109', 'autor': 'rosalia', 'alt': 'baby yoda', 'disp': true },
-  { 'nombre': '110', 'autor': 'rosalia', 'alt': 'rana rene', 'disp': true },
-  { 'nombre': '201', 'autor': 'rosalia', 'alt': 'bosa tipo smokin', 'disp': true }
+  { 'nombre': '110', 'autor': 'rosalía', 'alt': 'Rana René', 'disp': true },
+  { 'nombre': '109', 'autor': 'rosalía', 'alt': 'Baby Yoda', 'disp': true },
+  { 'nombre': '108', 'autor': 'rosalía', 'alt': 'Bodoque sin boca', 'disp': false },
+  { 'nombre': '107', 'autor': 'rosalía', 'alt': 'Osita rosada', 'disp': false },
+  { 'nombre': '106', 'autor': 'rosalía', 'alt': 'Steve-Minecraft', 'disp': false },
+  { 'nombre': '105', 'autor': 'rosalía', 'alt': 'Patito claro', 'disp': false },
+  { 'nombre': '104', 'autor': 'rosalía', 'alt': 'Osito con mameluco', 'disp': false },
+  { 'nombre': '103', 'autor': 'rosalía', 'alt': 'Juan Carlos Bodoque', 'disp': false },
+  { 'nombre': '102', 'autor': 'rosalía', 'alt': 'Elefante', 'disp': true },
+  { 'nombre': '101', 'autor': 'rosalía', 'alt': 'Mapache', 'disp': false },
+  { 'nombre': '09', 'autor': 'norma', 'alt': 'Girasol y Tulipanes', 'disp': false },
+  { 'nombre': '08', 'autor': 'norma', 'alt': 'Miniom', 'disp': true },
+  { 'nombre': '07', 'autor': 'norma', 'alt': 'Osito', 'disp': false },
+  { 'nombre': '06', 'autor': 'norma', 'alt': 'Batman', 'disp': true },
+  { 'nombre': '05', 'autor': 'norma', 'alt': 'Olaf', 'disp': true },
+  { 'nombre': '04', 'autor': 'norma', 'alt': 'Reno rojo', 'disp': true },
+  { 'nombre': '03', 'autor': 'norma', 'alt': 'Reno verde', 'disp': true },
+  { 'nombre': '02', 'autor': 'norma', 'alt': 'Patito', 'disp': true },
+  { 'nombre': '01', 'autor': 'norma', 'alt': 'Cochinito', 'disp': true },
+  { 'nombre': '201', 'autor': 'rosalía', 'alt': 'Bolsa tipo smokin', 'disp': true }
 ]
 let hijos = galeria.childNodes.length
 let mostrar = true;
@@ -474,6 +474,10 @@ function mostrarLeyenda(){
 
   divLeyendaOverlay.appendChild(cerrarLeyenda);
   main.appendChild(divLeyendaOverlay);
+  setTimeout(()=>{
+    pUno.classList.add('aparecer');
+    pDos.classList.add('aparecer');
+  }, 500)
 }
 
 function colorearLogo(){

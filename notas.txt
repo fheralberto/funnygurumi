@@ -1,9 +1,10 @@
 Pendientes:
-Cambiar el tamaño de las imágenes de la gelaría
-Minimizarlas
-
-Aletoriedad para mostrar imágenes de la galería 
-o mostrar primero los más recientes
+Menú para móvil
+Quienes somos
+Botón para leyenda
+Botón para modo nocturno
+	diseño del modo nocturno
+	guardar preferencia del modo nocturno
 
 link whatsapp
 https://walink.co/ea136b
