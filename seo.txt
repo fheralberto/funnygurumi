@@ -35,13 +35,16 @@
   https://gist.github.com/jorgejaramillo/1e344013024d0e8f50874871bee2d2a3
 
 4.-Data estructurada
-  Se colocó en el head antes del cierre de la etiqueta
   - Formatos:
   https://developers.google.com/search/docs/advanced/structured-data/search-gallery
-  - Generador:
+  https://developers.google.com/search/docs/advanced/structured-data/local-business
+  - Generador: Se generó tipo LocalBussiness
   https://search.google.com/test/rich-results
+  - Se colocó en el head antes del cierre de la etiqueta
   - Verificar si la página puede generar resultados enriquecidos:
   https://search.google.com/test/rich-results
+  Puede ser al código o a la URL cuando se hayan desplegado los cambios
+  
 
 
 
