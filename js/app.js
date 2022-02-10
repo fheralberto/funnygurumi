@@ -29,6 +29,7 @@ const datosGaleria = [
   { 'nombre': '103', 'autor': 'rosalía', 'alt': 'Juan Carlos Bodoque', 'disp': false },
   { 'nombre': '102', 'autor': 'rosalía', 'alt': 'Elefante', 'disp': true },
   { 'nombre': '101', 'autor': 'rosalía', 'alt': 'Mapache', 'disp': false },
+  { 'nombre': '10', 'autor': 'norma', 'alt': 'Alcatraces', 'disp': false },
   { 'nombre': '09', 'autor': 'norma', 'alt': 'Girasol y Tulipanes', 'disp': false },
   { 'nombre': '08', 'autor': 'norma', 'alt': 'Miniom', 'disp': true },
   { 'nombre': '07', 'autor': 'norma', 'alt': 'Osito', 'disp': false },
@@ -123,7 +124,7 @@ function mostrarGaleria(max) {
   let lista = [];
   for (let i = 0; i < max; i++) {
     do{
-      aleatorio = aleatorioEntero(0, 18);
+      aleatorio = aleatorioEntero(0, 19);
     }
     while(lista.includes(aleatorio));
     lista.push(aleatorio);

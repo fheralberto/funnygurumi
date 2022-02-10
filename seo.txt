@@ -44,9 +44,13 @@
   - Verificar si la página puede generar resultados enriquecidos:
   https://search.google.com/test/rich-results
   Puede ser al código o a la URL cuando se hayan desplegado los cambios
-  
-
-
+  - Solicitar indexación para ver el resultado más rápido
 
 Cambio del target de la página a México
 https://www.google.com/webmasters/tools/i18n?hl=es&siteUrl=https://tejirumis.com/&utm_campaign=wnc_807103&tid=geo
+
+PageSpeed Insights
+css.github.io
+Critical CSS
+jonassebastianohlsson.com // Generador
+https://keywordtool.io/es 
