@@ -7,55 +7,63 @@
   height: 100vh;
   top: 0;
   left: 0;
-  z-index: 10;
-
+  z-index: 40;
   /* background-color: rgba(0,0,0, .3); */
 }
 .leyenda-contenedor{
   position: absolute;
-  top: 100%;
+  /* top: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
 
   width: 100%;
+  max-width: 1080px;
   height: 100%;
-  max-width: 485px;
-  max-height: 640px;
+  /* max-width: 485px;
+  max-height: 640px; */
 
   background-image: url('/img/leyenda/papiro.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50% 50%;
-  animation: entrada .5s ease forwards;
+  /* animation: entrada .5s ease forwards; */
 }
-@keyframes entrada {
+
+/* @keyframes entrada {
   0% { top: -100%;}
   100% { 
     top: 50%;
     transform: translateY(-50%);
   }
+} */
+
+/* .leyenda-contenedor.subir{
+  animation: salida .5s ease forwards;
 }
+@keyframes salida {
+  0% { 
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  100% {top: -100%;}
+} */
+
 .leyenda-contenido{
   display: flex;
   align-items: center;
   justify-content: center;
   width: 80%;
-  height: 60%;
-  max-width: 485px;
-  max-height: 640px;
-
-  /* background-color: rgba(0,0,0, .3); */
+  height: 50%;
+  /* max-width: 485px;
+  max-height: 640px; */
 }
 .leyenda-relato{
   /* display: inline-block; */
-  width: 95%;
+  width: 80%;
   height: 90%;
   padding: 12px 10px 10px;
   color: #574837;
-  /* color: white; */
-  /* background-color: rgba(0,0,0, .3); */
-  /* height: 30%; */
   overflow: auto;
 }
 .leyenda-relato .leyenda-portada{
@@ -90,27 +98,21 @@
   line-height: 0;
 }
 
-/* @media(min-width: 414px){
-  .leyenda-contenedor{
-    font-size: 16px;
-  }
-} */
-
 @media (orientation: landscape){
   .leyenda-contenedor{
     background-image: url('/img/leyenda/papiroLandscape.png');
-    max-width: 640px;
-    max-height: 485px;
+    /* max-width: 640px;
+    max-height: 485px; */
 
   }
   .leyenda-contenido{
     width: 60%;
-    height: 80%;
+    height: 70%;
   }
 }
 @media screen and (min-width: 813px){
   .leyenda-contenido{
-    height: 70%;
+    height: 60%;
   }
   .leyenda-relato .leyenda-portada{
     width: 115px;

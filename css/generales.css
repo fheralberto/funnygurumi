@@ -1,0 +1,107 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root{
+  --morado: #3A2E57;
+  --fondoMenu: wheat;
+  --bordeTicket: indianRed;
+  --tiempo: .5s;
+}
+/* body::-webkit-scrollba{} */
+/* vertical-scroll::-webkit-scrollba{} */
+
+::-webkit-scrollbar{
+  /* Para horizontal scroll (Línea vertical)*/
+  width: .5em; 
+  /* Para vertical scroll (Línea horizontal)*/
+  height: .5em; 
+}
+::-webkit-scrollbar-track{
+  background: rgb(161,138,107);
+  border-radius: 100vh;
+  margin-block: 3em;
+}
+
+::-webkit-scrollbar-thumb{
+  background: var(--bordeTicket);
+  /* background: linear-gradient(45deg, rgb(69,202,220), rgb(123,45,231)); */
+  /* border: .1em solid var(--bordeTicket); */
+  border-radius: 100vh;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  /* background: linear-gradient(45deg, rgb(123,45,231), rgb(69,202,220)); */
+  background: rgb(171,69,69);
+}
+
+/* Soporte para firefox */
+@supports (scrollbar-color: red blue){
+  *{
+    scrollbar-color: var(--bordeTicket) rgb(161,138,107);
+    scrollbar-width: thin;
+  }
+}
+
+.btn-cerrar {
+  position: absolute;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  top: 15px;
+  right: 15px;
+  /* left: 50%;
+  transform: translate(-50%); */
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, .3);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 300;
+  border-radius: 50%;
+  font-weight: 300;
+  z-index: 1;
+}
+
+.btn-cerrar:hover {
+  cursor: pointer;
+  font-weight: 700;
+  background-color: rgba( 0, 0, 0, .5);
+}
+
+.btn-cerrar-x{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgba( 255, 255, 255, .5);
+  border-radius: 50%;
+  z-index: 20;
+}
+.x{
+  transform: rotate(45deg);
+}
+.x::before{
+  content: '';
+  display:inline-block;
+  transform: rotate(-90deg) translate(11px, 0);
+}
+.x, .x::before{
+  width: 30px;
+  height: 3px;
+  border-radius: 3px;
+  background-color: var(--morado);
+}

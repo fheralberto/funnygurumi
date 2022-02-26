@@ -1,0 +1,133 @@
+.catalogo{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  max-width: 1080px;
+  bottom: 0;
+  z-index: 40;
+  background-color: var(--morado);
+
+  /* Fondo pirámides */
+  background: conic-gradient(from 45deg, 
+      #561a16 25%, 
+      #6a201b 0% 50%, 
+      #a7332b 0% 75%, 
+      #d45d55 0%) 
+      50%/ 20px 20px;
+}
+
+.catalogo .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.catalogo .swiper {
+  width: 100%;
+  /* height: 300px; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.catalogo .swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.catalogo .mySwiper2 {
+  height: 80%;
+  width: 100%;
+  /* --swiper-navigation-color: var(--morado); */
+  /* --swiper-pagination-color: #fff; */
+
+  /* background-color: var(--morado); */
+
+  /* background-color: white; */
+}
+
+.catalogo .mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+
+  /* background-color: var(--morado); */
+
+  /* background-color: white; */
+}
+
+.catalogo .mySwiper .swiper-slide {
+  position: relative;
+  width: 25%;
+  height: 100%;
+  /* opacity: 0.4; */
+  filter: brightness(.7);
+}
+
+.catalogo .mySwiper .swiper-slide-thumb-active {
+  /* opacity: 1; */
+  filter: brightness(1);
+  /* border: 2px solid black; */
+  -webkit-box-shadow: 0px 0px 15px 5px #000000; 
+  box-shadow: 0px 0px 15px 5px #000000;
+
+  transform: scale(1.1, 1.1);
+  z-index: 1;
+}
+
+.catalogo .mySwiper .swiper-slide-thumb-active::before,
+.catalogo .mySwiper .swiper-slide-thumb-active::after
+{
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(90deg,
+    #e6fb04, #ff6600, #00ff66, #00ffff, #ff00ff,
+    #ff0099, #6e0dd0, #ff3300, #099f99, #e6fb04); 
+  background-size: 400px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: animaBorde 80s linear infinite;
+}
+.catalogo .mySwiper .swiper-slide-thumb-active::after{
+  filter: blur(2px);
+}
+
+@keyframes animaBorde {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+}
+
+.catalogo .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.catalogo .swiper-slide-visible img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.catalogo .swiper-button-prev,
+.catalogo .swiper-button-next{
+  color: var(--morakdo);
+  /* color: indianred; */
+  color: wheat;
+}

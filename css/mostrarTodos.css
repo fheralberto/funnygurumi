@@ -1,8 +1,8 @@
-section {
+.mostrar-todo {
   position: absolute;
   height: 100%;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1080px;
   bottom: 0;
   padding: 0 15px;
 
@@ -11,9 +11,13 @@ section {
   align-items: center;
   /* background-image: url('../img/edificios.jpg'); */
   /* background-color: rgba(0, 0, 0, 0.2); */
-  transition: opacity 1s;
+  z-index: 40;
+  transition: opacity .5s;
 }
-section .swiper-slide .image {
+.mostrar-todo .swipe{
+  height: fit-content;
+}
+.mostrar-todo .swiper-slide .image {
   height: 140px;
   width: 140px;
   border-radius: 50%;
@@ -22,7 +26,7 @@ section .swiper-slide .image {
   z-index: 1;
   cursor: pointer;
 }
-section .swiper-slide .image img {
+.mostrar-todo .swiper-slide .image img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -30,13 +34,13 @@ section .swiper-slide .image img {
   border: 3px solid white;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
 }
-.swiper-slide {
+.mostrar-todo .swiper-slide {
   position: relative;
   background-color: white;
   /* background-color: rgba(255,255,255, .2); */
   border-radius: 20px;
 }
-.swiper-slide::before {
+.mostrar-todo .swiper-slide::before {
   content: "";
   position: absolute;
   height: 40%;
@@ -45,14 +49,14 @@ section .swiper-slide .image img {
   background-color: #7d2ae8;
   border-radius: 20px 20px 0 0;
 }
-.swiper-slide .card-content {
+.mostrar-todo .swiper-slide .card-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
 }
-.swiper-slide .descripcion {
+.mostrar-todo .swiper-slide .descripcion {
   color: #333;
   font-size: 15px;
   font-weight: 600;
@@ -60,17 +64,17 @@ section .swiper-slide .image img {
   padding-top: 10px;
   text-align: center;
 }
-.swiper-slide .autor {
+.mostrar-todo .swiper-slide .autor {
   color: #333;
   font-size: 12px;
   font-weight: 400;
 }
-.swiper-slide .autor span{
+.mostrar-todo .swiper-slide .autor span{
   font-size: 13px;
   font-weight: 500;
   text-transform: capitalize;
 }
-.swiper-slide .botones {
+.mostrar-todo .swiper-slide .botones {
   width: 100%;
   display: flex;
   /* justify-content: space-between; */
@@ -78,7 +82,7 @@ section .swiper-slide .image img {
   padding: 20px 0;
   max-width: 220px;
 }
-.swiper-slide .botones button {
+.mostrar-todo .swiper-slide .botones button {
   outline: none;
   border: none;
   width: 100px;
@@ -89,56 +93,69 @@ section .swiper-slide .image img {
   background-color: #7d2ae8;
   color: white;
 }
-.swiper-slide .botones button:hover {
+.mostrar-todo .swiper-slide .botones button:hover {
   cursor: pointer;
   background-color: #6616d0;
 }
-.swiper-slide .botones .deshabilitado {
+.mostrar-todo .swiper-slide .botones .deshabilitado {
   background-color: gray;
   color: lightgray;
 }
-.swiper-slide .botones .deshabilitado:hover {
+.mostrar-todo .swiper-slide .botones .deshabilitado:hover {
   cursor: not-allowed;
   background-color: gray;
   color: lightgray;
 }
-.btnVolver{
-  position: fixed;
+.mostrar-todo .btnVolver{
+  position: absolute;
   margin: 0;
-  top: 22px;
+  width: 30px;
+  height: 30px;
+  top: 15px;
+  right: 15px;
+
+  /* bottom: 22px;
   left: 15px;
   width: 3rem;
-  height: 3rem;
+  height: 3rem; */
   border-radius: 50%;
   font-size: 1.5rem;
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.5);
   background-color: rgba(255, 255, 255, 0.5);
-  z-index: 10;
+  z-index: 20;
 }
-.btnVolver:hover{
+.mostrar-todo .btnVolver:hover{
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
-.swiper-horizontal > .swiper-pagination-bullets{
-  bottom: 7px;
+.mostrar-todo .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
+  margin: 0 2px;
 }
 
+.mostrar-todo .swiper-horizontal > .swiper-pagination-bullets{
+  bottom: 7px;
+}
+.mostrar-todo .swiper-button-next{
+  color: var(--morado);
+}
+.mostrar-todo .swiper-button-prev{
+  color: var(--morado);
+}
 @media (min-width: 568px) {
-  .swiper-horizontal > .swiper-pagination-bullets{
+  .mostrar-todo .swiper-horizontal > .swiper-pagination-bullets{
     text-align: left;
     padding-left: 85px;
   }
 }
 @media (min-width: 736px){
-  .swiper-horizontal > .swiper-pagination-bullets{
+  .mostrar-todo .swiper-horizontal > .swiper-pagination-bullets{
     text-align: center;
     padding: 0;
     bottom: 7px;
   }
 }
 @media (min-width: 1080px) {
-  .swiper-horizontal > .swiper-pagination-bullets{
+  .mostrar-todo .swiper-horizontal > .swiper-pagination-bullets{
     text-align: left;
     padding-left: 85px;
   }

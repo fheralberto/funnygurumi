@@ -1,0 +1,23 @@
+const datosGaleria = [
+  { 'nombre': '110', 'autor': 'rosalía', 'alt': 'Rana René', 'disp': true },
+  { 'nombre': '109', 'autor': 'rosalía', 'alt': 'Baby Yoda', 'disp': true },
+  { 'nombre': '108', 'autor': 'rosalía', 'alt': 'Bodoque sin boca', 'disp': false },
+  { 'nombre': '107', 'autor': 'rosalía', 'alt': 'Osita rosada', 'disp': false },
+  { 'nombre': '106', 'autor': 'rosalía', 'alt': 'Steve-Minecraft', 'disp': false },
+  { 'nombre': '105', 'autor': 'rosalía', 'alt': 'Patito claro', 'disp': false },
+  { 'nombre': '104', 'autor': 'rosalía', 'alt': 'Osito con mameluco', 'disp': false },
+  { 'nombre': '103', 'autor': 'rosalía', 'alt': 'Juan Carlos Bodoque', 'disp': false },
+  { 'nombre': '102', 'autor': 'rosalía', 'alt': 'Elefante', 'disp': true },
+  { 'nombre': '101', 'autor': 'rosalía', 'alt': 'Mapache', 'disp': false },
+  { 'nombre': '10', 'autor': 'norma', 'alt': 'Alcatraces', 'disp': false },
+  { 'nombre': '09', 'autor': 'norma', 'alt': 'Girasol y Tulipanes', 'disp': false },
+  { 'nombre': '08', 'autor': 'norma', 'alt': 'Miniom', 'disp': true },
+  { 'nombre': '07', 'autor': 'norma', 'alt': 'Osito', 'disp': false },
+  { 'nombre': '06', 'autor': 'norma', 'alt': 'Batman', 'disp': true },
+  { 'nombre': '05', 'autor': 'norma', 'alt': 'Olaf', 'disp': true },
+  { 'nombre': '04', 'autor': 'norma', 'alt': 'Reno rojo', 'disp': true },
+  { 'nombre': '03', 'autor': 'norma', 'alt': 'Reno verde', 'disp': true },
+  { 'nombre': '02', 'autor': 'norma', 'alt': 'Patito', 'disp': true },
+  { 'nombre': '01', 'autor': 'norma', 'alt': 'Cochinito', 'disp': true },
+  { 'nombre': '201', 'autor': 'rosalía', 'alt': 'Bolsa tipo smokin', 'disp': true }
+]
