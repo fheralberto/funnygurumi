@@ -4,7 +4,7 @@ function acercaDe(menu){
     { 'nombre': 'jugandoKermit.jpg', 'alt':'Jugando con la rana René', 'descripcion': 'Pero antes a jugar un rato, dile "Holaa"'},
     { 'nombre': 'culpable.png', 'alt':'amoy culpable', 'descripcion': 'Ella es amoy y fué declarada culpable'},
     { 'nombre': 'certificadoPrincipiante.png', 'alt':'Amoy certificado de principiante', 'descripcion': 'De terminar el curso de principiante de amigurumis'},
-    { 'nombre': 'haciendoAlice.jpg', 'alt':'tejiendo a Alice', 'descripcion': 'Haciendo a Alicia para el curso avanzado de amigurumis'},
+    { 'nombre': 'haciendoAlice.jpg', 'alt':'tejiendo a Alice', 'descripcion': 'Aquí haciendo a Alicia para el curso avanzado de amigurumis'},
     { 'nombre': 'StaffTejirumis.jpg', 'alt':'Staff Tejirumis', 'descripcion': 'Las tejirumis con el Fer, el creador del sitio web'},
 
   ]
@@ -18,6 +18,7 @@ function acercaDe(menu){
   divContenido.classList.add('contenedor-contenido');
   contenedorSeccion.appendChild(divContenido);
 
+  // Titulos
   const divTitulos = document.createElement('div');
   divTitulos.classList.add('acercade-titulos');
   divContenido.appendChild(divTitulos);
@@ -25,16 +26,25 @@ function acercaDe(menu){
   const sobreNosotros = document.createElement('h2');
   sobreNosotros.textContent = 'Sobre Nosotros';
   divTitulos.appendChild(sobreNosotros);
-  
+
   const tituloSobre = document.createElement('h3');
   tituloSobre.classList.add('encabezado-sobre');
-  tituloSobre.textContent = 'Bienvenido a Tejirumis! | donde las arañas tejen su bicho';
+  tituloSobre.textContent = 'Bienvenido a Tejirumis!';
   divTitulos.appendChild(tituloSobre);
+
+  const divP = document.createElement('p')
+  divP.textContent = 'donde las arañas tejen su bicho'
+  divTitulos.appendChild(divP);
+
+
+  const contenedorInfo = document.createElement('div');
+  contenedorInfo.classList.add('contenedor-info');
+  divContenido.appendChild(contenedorInfo);
 
   // Contenedor y fondo para imágenes
   const divImagenes = document.createElement('div');
   divImagenes.classList.add('contenedor-imagenes');
-  divContenido.appendChild(divImagenes);
+  contenedorInfo.appendChild(divImagenes);
 
   const cssFondo = document.createElement('css-doodle');
   cssFondo.classList.add('active');
@@ -68,9 +78,10 @@ function acercaDe(menu){
 
   })
 
+  // Párrafos
   const divTextos = document.createElement('div');
   divTextos.classList.add('contenedor-textos');
-  divContenido.appendChild(divTextos);
+  contenedorInfo.appendChild(divTextos);
 
   const tituloContenido = document.createElement('h3');
   tituloContenido.classList.add('titulo-contenido');
@@ -89,17 +100,17 @@ function acercaDe(menu){
   const parrafo1 = document.createElement('p');
   parrafo1.textContent = 'a principios del 2021 conocimos a los muñequitos tejidos llamados "Amigurumis" y casualmente nos salió la oportunidad de tomar un curso para aprender a hacerlos gracias al patrocinio del Ayuntamiento de Mérida, por cierto, nosotros radicamos en esta bella ciudad de Yucatán, México.'
   divParrafos.appendChild(parrafo1);
-  
+
   const parrafo2 = document.createElement('p');
   parrafo2.textContent = 'seguimos aprendiendo, ahora estamos en un curso más avanzado. Vendemos los amigurumis que hacemos o nos hacen encargos; un amigurumi nos puede llevar de 2 a 7 días en terminarlo, pero nos emociona ver el resultado de nuestro trabajo.';
-  divParrafos.appendChild(parrafo2);    
+  divParrafos.appendChild(parrafo2);
 
   //botón para cerrar acercaDe
   const btnCerrarX = document.createElement('div');
   btnCerrarX.classList.add('btn-cerrar-x');
   const x = document.createElement('div');
   x.classList.add('x');
-  btnCerrarX.appendChild(x);  
+  btnCerrarX.appendChild(x);
 
   //Se le agrega el evento para cerrar el catalogo---------
   btnCerrarX.onclick = () => {
@@ -115,7 +126,7 @@ function acercaDe(menu){
     menu.classList.remove('desvanecer');
     botonMenu.classList.remove('desvanecer');
   }
-  
+
   main.appendChild(acercaDeCubierta);
   divContenido.appendChild(btnCerrarX);
   main.appendChild(contenedorSeccion);

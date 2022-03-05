@@ -17,7 +17,7 @@ function menu(){
   // -----------Links---------
   const navAbout = document.createElement('div');
   navAbout.classList.add('link', 'nav-about');
-  navAbout.textContent = 'Quienes somos';
+  navAbout.textContent = 'Sobre nosotros';
   const bordeAbout = document.createElement('div');
   bordeAbout.classList.add('borde-ticket')
   bordeAbout.appendChild(navAbout);
@@ -45,7 +45,7 @@ function menu(){
 
   const navGaleria = document.createElement('div');
   navGaleria.classList.add('link', 'navGaleria');
-  navGaleria.textContent = 'Galería';
+  navGaleria.textContent = 'Nuestro trabajo';
   const bordeGaleria = document.createElement('div');
   bordeGaleria.classList.add('borde-ticket')
   bordeGaleria.appendChild(navGaleria);
@@ -57,7 +57,12 @@ function menu(){
 
   const navCatalogo = document.createElement('div');
   navCatalogo.classList.add('link');
-  navCatalogo.textContent = 'Catálogo';
+  navCatalogo.textContent = 'Ideas ';
+
+  const iconoFoco = document.createElement('i');
+  iconoFoco.classList.add('fa-solid', 'fa-lightbulb-on');
+  navCatalogo.appendChild(iconoFoco);
+  
   const bordeCatalogo = document.createElement('div');
   bordeCatalogo.classList.add('borde-ticket')
   bordeCatalogo.appendChild(navCatalogo);
