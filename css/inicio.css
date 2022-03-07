@@ -16,31 +16,11 @@ main{
   background-attachment: fixed;
   overflow: hidden;
 }
-.titulo
-{
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-image: url('/img/bgp.png');
-  width: max-content;
-  pointer-events: none;
-  animation: blink 12s infinite;
-  /* text-transform: capitalize; */
-}
-.boton
-{
-  bottom: 10px;
-  background-image: url('/img/bgb.png');
-  animation: blink 10s -6s infinite;
-  cursor: pointer;
-  z-index: 10;
-}
 .titulo,
 .boton
 {
   position: absolute;
   margin: 0;
-  padding: 0 17px;
   max-width: 400px;
   height: fit-content;
   line-height: 30px;
@@ -67,6 +47,28 @@ main{
   opacity: 1;
   transition: opacity 1s;
 }
+.titulo
+{
+  top: 15px;
+  left: 50%;
+  padding: 0 17px;
+  transform: translateX(-50%);
+  background-image: url('/img/bgp.png');
+  width: max-content;
+  pointer-events: none;
+  animation: blink 12s infinite;
+  /* text-transform: capitalize; */
+}
+.boton
+{
+  bottom: 10px;
+  padding: 2px 17px;
+  background-image: url('/img/bgb.png');
+  animation: blink 10s -6s infinite;
+  cursor: pointer;
+  z-index: 10;
+}
+
 
 @keyframes blink{
   20%, 24%, 55%{

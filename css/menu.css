@@ -65,6 +65,22 @@
   padding: 8px 4px;
   cursor: pointer;
 }
+.link i{
+  color: sandybrown;
+  transition: var(--tiempo);
+}
+.link:hover i{
+
+  text-shadow: 0 0 5px #ffa500,
+  0 0 5px #ffa500,
+               0 0 5px #ffa500,
+               0 0 5px #ffa500,
+               0 0 5px #ff0000,
+               0 0 5px #ff8d00,
+               0 0 5px #ff0000;
+  color: #fff6a9;
+}
+
 .menu-btn{
   width: 30px;
   height: 30px;
@@ -134,17 +150,3 @@
   width: 30px;
   height: 3px;
 }
-
-/*-------- media queries ----- */
-/* @media (min-width: 390px){
-  .menu-btn{
-    width: 30px;
-    height: 30px;
-  }
-  .hamburguesa,
-  .hamburguesa::before,
-  .hamburguesa::after{
-    width: 24px;
-    height: 3px;
-  }
-} */

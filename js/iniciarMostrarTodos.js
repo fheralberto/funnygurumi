@@ -1,8 +1,11 @@
 function iniciarMostrarTodos(){
   var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    spaceBetween: 10,
+    slidesPerView: 2,
+    slidesPerGroup: 2,
+    grid:{
+      rows: 3
+    },
+    spaceBetween: 15,
     loop: false,
     loopFillGroupWithBlank: false,
     freeMode: true,
@@ -27,22 +30,28 @@ function iniciarMostrarTodos(){
       prevEl: ".swiper-button-prev",
     },
 
-    breakpoints: {
-      568: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        spaceBetween: 10,
-      },
-      736: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        spaceBetween: 10,
-      },
-      1080: {
-        slidesPerView: 4,
-        slidesPerGroup: 4,
-        spaceBetween: 10,
-      }
-    }
+    // breakpoints: {
+    //   568: {
+    //     slidesPerView: 2,
+    //     slidesPerGroup: 2,
+    //     grid:{
+    //       rows: 2
+    //     },
+    //   },
+    //   736: {
+    //     slidesPerView: 3,
+    //     slidesPerGroup: 3,
+    //     grid:{
+    //       rows: 3
+    //     },
+    //   },
+    //   1080: {
+    //     slidesPerView: 4,
+    //     slidesPerGroup: 4,
+    //     grid:{
+    //       rows: 4
+    //     },
+    //   }
+    // }
   });
 }

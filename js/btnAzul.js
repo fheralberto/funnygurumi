@@ -1,7 +1,7 @@
 // El boton azul es mostrarTodos
 function btnAzul(){
   const btnMostrarTodos = document.createElement('div');
-  btnMostrarTodos.textContent = "Mostrar todos";
+  btnMostrarTodos.textContent = "Nuestro trabajo";
   btnMostrarTodos.classList.add('boton');
   btnMostrarTodos.setAttribute("id", "boton");
   main.appendChild(btnMostrarTodos);

@@ -60,9 +60,9 @@ function menu(){
   navCatalogo.textContent = 'Ideas ';
 
   const iconoFoco = document.createElement('i');
-  iconoFoco.classList.add('fa-solid', 'fa-lightbulb-on');
+  iconoFoco.classList.add('fa-solid', 'fa-lightbulb');
   navCatalogo.appendChild(iconoFoco);
-  
+
   const bordeCatalogo = document.createElement('div');
   bordeCatalogo.classList.add('borde-ticket')
   bordeCatalogo.appendChild(navCatalogo);

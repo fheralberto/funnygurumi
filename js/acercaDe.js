@@ -3,7 +3,7 @@ function acercaDe(menu){
     { 'nombre': 'haciendoKermit.jpg', 'alt':'Tejiendo a la rana René', 'descripcion': 'Ella es Chaly, apurada a terminar a la rana René'},
     { 'nombre': 'jugandoKermit.jpg', 'alt':'Jugando con la rana René', 'descripcion': 'Pero antes a jugar un rato, dile "Holaa"'},
     { 'nombre': 'culpable.png', 'alt':'amoy culpable', 'descripcion': 'Ella es amoy y fué declarada culpable'},
-    { 'nombre': 'certificadoPrincipiante.png', 'alt':'Amoy certificado de principiante', 'descripcion': 'De terminar el curso de principiante de amigurumis'},
+    { 'nombre': 'certificadoPrincipiante.png', 'alt':'Amoy certificado amigurumis', 'descripcion': 'De terminar el curso de amigurumis'},
     { 'nombre': 'haciendoAlice.jpg', 'alt':'tejiendo a Alice', 'descripcion': 'Aquí haciendo a Alicia para el curso avanzado de amigurumis'},
     { 'nombre': 'StaffTejirumis.jpg', 'alt':'Staff Tejirumis', 'descripcion': 'Las tejirumis con el Fer, el creador del sitio web'},
 

@@ -1,87 +1,103 @@
 // __________________________ Mostrar Todos __________________________
 function mostrarTodos() {
-  const contenido = document.createElement('div');
-  contenido.classList.add('swiper-wrapper');
+  const divMostrarTodo = document.createElement('section');
+  divMostrarTodo.classList.add('mostrar-todo');
+  main.appendChild(divMostrarTodo);
+
+  const cssFondo = document.createElement('div');
+  cssFondo.classList.add('fondo-triangulos');
+  divMostrarTodo.appendChild(cssFondo);
+
+  const divSwiper = document.createElement('div');
+  divSwiper.classList.add('container', 'swiper', 'mySwiper');
+  divMostrarTodo.appendChild(divSwiper);
+
+  const divSwiperWrapper = document.createElement('div');
+  divSwiperWrapper.classList.add('swiper-wrapper');
+  divSwiper.appendChild(divSwiperWrapper);
 
   datosGaleria.forEach(imagen => {
-    const imagenItem = document.createElement('img');
-    imagenItem.setAttribute("src", `img/galeria/${imagen.nombre}.png`);
-    imagenItem.setAttribute("alt", `${imagen.alt}`);
+    const divSwiperSlide = document.createElement('div');
+    divSwiperSlide.classList.add('swiper-slide');
+    divSwiperWrapper.appendChild(divSwiperSlide);
+
+    const divCardContent = document.createElement('div');
+    divCardContent.classList.add('card-content');
+    divSwiperSlide.appendChild(divCardContent);
+
+    const divImage = document.createElement('div');
+    divImage.classList.add('image');
+    divCardContent.appendChild(divImage);
+
+    const imgEl = document.createElement('img');
+    imgEl.setAttribute("src", `img/galeria/${imagen.nombre}.png`);
+    imgEl.setAttribute("alt", `${imagen.alt}`);
+    divImage.appendChild(imgEl);
 
     //Le crea atributo data-imagen-id = nombre de la foto 
-    imagenItem.dataset.imagenId = imagen.nombre;
+    imgEl.dataset.imagenId = imagen.nombre;
 
     // Se le agrega el evento onclick ---------------------------
-    imagenItem.onclick = ampliarImagen;
+    imgEl.onclick = ampliarImagen;
 
-    const divImagen = document.createElement('div');
-    divImagen.classList.add('image');
-    divImagen.appendChild(imagenItem);
-
-    const autor = document.createElement('div');
-    autor.classList.add('autor');
-    autor.textContent = 'by ';
-    const span = document.createElement('span');
-    span.textContent = imagen.autor;
-    autor.appendChild(span);
+    const divInfoCard = document.createElement('div');
+    divInfoCard.classList.add('info-card');
+    divCardContent.appendChild(divInfoCard);
 
     const descripcion = document.createElement('div');
     descripcion.classList.add('descripcion');
     descripcion.textContent = imagen.alt;
+    divInfoCard.appendChild(descripcion);
 
-    const tresSesenta = document.createElement('button');
-    tresSesenta.textContent = '360°';
-    tresSesenta.classList.add('tresSesenta');
-    if(!imagen.disp){
-      tresSesenta.disabled = true;
-      tresSesenta.classList.add('deshabilitado');
+    const divTresSesenta = document.createElement('div');
+    divTresSesenta.textContent = '360° ';
+    divTresSesenta.classList.add('tresSesenta');
+  
+    const divBotones = document.createElement('div');
+    divBotones.classList.add('botones');
+    divBotones.appendChild(divTresSesenta);
+    divInfoCard.appendChild(divBotones);
+
+    if(imagen.disp){
+      const arrowRotate = document.createElement('i');
+      arrowRotate.classList.add('fa-solid', 'fa-arrows-rotate');
+      divTresSesenta.appendChild(arrowRotate);
+
+      //Le crea atributo data-nombre-imagen = nombre de la foto 
+      divTresSesenta.dataset.nombreImagen = imagen.nombre;
+      // Se le agrega el evento onclick -----------------------------
+      divTresSesenta.onclick = threeSixty;
+    } 
+    else {
+      divTresSesenta.disabled = true;
+      divTresSesenta.classList.add('deshabilitado');
     }
-    //Le crea atributo data-nombre-imagen = nombre de la foto 
-    tresSesenta.dataset.nombreImagen = imagen.nombre;
-    // Se le agrega el evento onclick -----------------------------
-    tresSesenta.onclick = threeSixty;
 
-    // const expandir = document.createElement('button');
-    // expandir.classList.add('masInfo');
-    // expandir.textContent = '+info';
-
-    const contenedorBotones = document.createElement('div');
-    contenedorBotones.classList.add('botones');
-    contenedorBotones.appendChild(tresSesenta);
-    // contenedorBotones.appendChild(expandir);
-
-    const contenidoTarjeta = document.createElement('div');
-    contenidoTarjeta.classList.add('card-content');
-    contenidoTarjeta.appendChild(divImagen);
-    contenidoTarjeta.appendChild(descripcion);
-    contenidoTarjeta.appendChild(autor);
-    contenidoTarjeta.appendChild(contenedorBotones);
-
-    const tarjeta = document.createElement('div');
-    tarjeta.classList.add('swiper-slide');
-    tarjeta.appendChild(contenidoTarjeta);
-
-    contenido.appendChild(tarjeta);
+    const divBefore = document.createElement('div');
+    if(imagen.autor == 'norma'){
+      divBefore.classList.add('before', 'morado');
+      divImage.classList.add('morado');
+      divBotones.classList.add('morado');
+    } else {
+      divBefore.classList.add('before', 'rosado');
+      divImage.classList.add('rosado');
+      divBotones.classList.add('rosado');
+    }
+    divSwiperSlide.appendChild(divBefore);
   });
+
   const anterior = document.createElement('div');
   anterior.classList.add('swiper-button-next')
+  divSwiper.appendChild(anterior);
 
   const previo = document.createElement('div');
   previo.classList.add('swiper-button-prev')
+  divSwiper.appendChild(previo);
 
   const paginacion = document.createElement('div');
   paginacion.classList.add('swiper-pagination')
+  divSwiper.appendChild(paginacion);
 
-  const contenedorSwiper = document.createElement('div');
-  contenedorSwiper.classList.add('container', 'swiper', 'mySwiper');
-
-  contenedorSwiper.appendChild(contenido);
-  contenedorSwiper.appendChild(anterior);
-  contenedorSwiper.appendChild(previo);
-  contenedorSwiper.appendChild(paginacion);
-  
-  const seccion = document.createElement('section');
-  seccion.classList.add('mostrar-todo');
 
   // Crea botón para cerrar la sección
   const btnCerrarX = document.createElement('div');
@@ -89,29 +105,19 @@ function mostrarTodos() {
   const x = document.createElement('div');
   x.classList.add('x');
   btnCerrarX.appendChild(x);
-  seccion.appendChild(btnCerrarX);
-  
-  // const volver = document.createElement('div');
-  // volver.classList.add('btnVolver');
-  // volver.innerHTML = `
-  // <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  //   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
-  // </svg>
-  // `
+  divMostrarTodo.appendChild(btnCerrarX);
 
-  //Se le agrega el evento para cerrar la seccion -----------------------
+  //Se le agrega el evento para cerrar divMostrarTodo -----------------------
   btnCerrarX.onclick = () => {
-    animateCSS(seccion, 'bounceOutRight');
+    animateCSS(divMostrarTodo, 'bounceOutRight');
     setTimeout(()=>{
-      reiniciar(seccion);
+      reiniciar(divMostrarTodo);
     }, 500);
   }
   
-  seccion.appendChild(contenedorSwiper);
-  main.appendChild(seccion);
   // Animación de entrada-----
-  animateCSS(seccion, 'bounceInRight');
-  
+  animateCSS(divMostrarTodo, 'bounceInRight');
+    
   // inicializarSwiper()
   iniciarMostrarTodos();
 }

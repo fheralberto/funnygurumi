@@ -2,29 +2,59 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  max-width: 1080px;
   bottom: 0;
   padding: 0 15px;
-
   display: flex;
   justify-content: center;
-  align-items: center;
-  /* background-image: url('../img/edificios.jpg'); */
-  /* background-color: rgba(0, 0, 0, 0.2); */
+  align-items: flex-end;
   z-index: 40;
   transition: opacity .5s;
 }
-.mostrar-todo .swipe{
-  height: fit-content;
+.mostrar-todo .swiper{
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 0;
+  max-width: 1080px;
+}
+.mostrar-todo .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  height: calc((100% - 30px) / 3) !important;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+  align-items: flex-end;
+  position: relative;
+  border-radius: 20px;
+}
+.mostrar-todo .swiper-wrapper{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
 }
 .mostrar-todo .swiper-slide .image {
-  height: 140px;
-  width: 140px;
+  height: 90px;
+  width: 90px;
   border-radius: 50%;
-  background-color: #7d2ae8;
   padding: 3px;
   z-index: 1;
   cursor: pointer;
+  box-shadow: 0px 5px 10px -5px #000000;
 }
 .mostrar-todo .swiper-slide .image img {
   height: 100%;
@@ -32,21 +62,13 @@
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid white;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
+  background: radial-gradient(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.2));
 }
-.mostrar-todo .swiper-slide {
-  position: relative;
-  background-color: white;
-  /* background-color: rgba(255,255,255, .2); */
-  border-radius: 20px;
-}
-.mostrar-todo .swiper-slide::before {
-  content: "";
+.mostrar-todo .before {
   position: absolute;
+  top: 0;
   height: 40%;
   width: 100%;
-  /* background-color: rgba(125, 42, 232,.7); */
-  background-color: #7d2ae8;
   border-radius: 20px 20px 0 0;
 }
 .mostrar-todo .swiper-slide .card-content {
@@ -55,47 +77,49 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  height: 195px;
 }
 .mostrar-todo .swiper-slide .descripcion {
   color: #333;
   font-size: 15px;
   font-weight: 600;
-  /* text-transform: uppercase; */
-  padding-top: 10px;
   text-align: center;
+  z-index: 1;
 }
-.mostrar-todo .swiper-slide .autor {
-  color: #333;
-  font-size: 12px;
-  font-weight: 400;
-}
-.mostrar-todo .swiper-slide .autor span{
-  font-size: 13px;
-  font-weight: 500;
-  text-transform: capitalize;
-}
-.mostrar-todo .swiper-slide .botones {
-  width: 100%;
+.mostrar-todo .info-card{
   display: flex;
-  /* justify-content: space-between; */
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 80px;
+}
+
+.mostrar-todo .swiper-slide .botones {
+  bottom: 10px;
+  right: 10px;
+  width: fit-content;
+  border-radius: 50px;
+  display: flex;
   justify-content: center;
-  padding: 20px 0;
-  max-width: 220px;
+  align-items: center;
+  z-index: 1;
 }
-.mostrar-todo .swiper-slide .botones button {
-  outline: none;
+.mostrar-todo .swiper-slide .botones .tresSesenta {
   border: none;
-  width: 100px;
-  padding: 8px 0;
-  font-size: 14px;
-  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  padding: 2px 15px;
+  font-size: 21px;
   transition: 0.3s ease;
-  background-color: #7d2ae8;
+  background-color: transparent;
   color: white;
+  -webkit-box-shadow: 0px 5px 10px -5px #000000; 
+  box-shadow: 0px 5px 10px -5px #000000;
 }
-.mostrar-todo .swiper-slide .botones button:hover {
+.mostrar-todo .swiper-slide .botones .tresSesenta:hover {
   cursor: pointer;
-  background-color: #6616d0;
+  background-color: chartreuse;
 }
 .mostrar-todo .swiper-slide .botones .deshabilitado {
   background-color: gray;
@@ -106,34 +130,13 @@
   background-color: gray;
   color: lightgray;
 }
-.mostrar-todo .btnVolver{
-  position: absolute;
-  margin: 0;
-  width: 30px;
-  height: 30px;
-  top: 15px;
-  right: 15px;
-
-  /* bottom: 22px;
-  left: 15px;
-  width: 3rem;
-  height: 3rem; */
-  border-radius: 50%;
-  font-size: 1.5rem;
-  color: rgba(0, 0, 0, 0.5);
-  background-color: rgba(255, 255, 255, 0.5);
-  z-index: 20;
-}
-.mostrar-todo .btnVolver:hover{
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-}
 .mostrar-todo .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
   margin: 0 2px;
+  background-color: chartreuse;
 }
 
 .mostrar-todo .swiper-horizontal > .swiper-pagination-bullets{
-  bottom: 7px;
+  bottom: 6px;
 }
 .mostrar-todo .swiper-button-next{
   color: var(--morado);
@@ -141,22 +144,74 @@
 .mostrar-todo .swiper-button-prev{
   color: var(--morado);
 }
-@media (min-width: 568px) {
-  .mostrar-todo .swiper-horizontal > .swiper-pagination-bullets{
-    text-align: left;
-    padding-left: 85px;
+
+@media (min-width: 360px) and (orientation: portrait){
+  .mostrar-todo .swiper-slide .image {
+    height: 120px;
+    width: 120px;
+  }
+  .mostrar-todo .swiper-slide .card-content {
+    height: 220px;
   }
 }
-@media (min-width: 736px){
-  .mostrar-todo .swiper-horizontal > .swiper-pagination-bullets{
-    text-align: center;
-    padding: 0;
-    bottom: 7px;
+@media (min-width: 414px) and (orientation: portrait){
+  .mostrar-todo .swiper-slide .image {
+    height: 150px;
+    width: 150px;
+  }
+  .mostrar-todo .swiper-slide .card-content {
+    height: 240px;
   }
 }
-@media (min-width: 1080px) {
-  .mostrar-todo .swiper-horizontal > .swiper-pagination-bullets{
-    text-align: left;
-    padding-left: 85px;
+@media (min-height: 812px) and (orientation: portrait){
+  .mostrar-todo .swiper-slide{
+    align-items: center;
+  }
+}
+
+@media (orientation: landscape) {
+  .mostrar-todo .swiper-slide {
+    align-items: flex-end;
+  }  
+  .mostrar-todo .swiper-slide .card-content{
+    flex-direction: row;
+    align-items: flex-end;
+    height: auto;
+  }
+  .mostrar-todo .info-card{
+    flex-direction: column-reverse;
+  }
+  .mostrar-todo .swiper-slide .descripcion{
+    font-size: 12px;
+    width: 100px;
+    flex-grow: 1;
+    padding-top: 11px;
+  }
+  .mostrar-todo .before{
+    height: 35%;
+  }
+}
+
+@media (orientation: landscape) and (min-height: 375px){
+  .mostrar-todo .swiper-slide{
+    align-items: center;
+  }
+  .mostrar-todo .swiper-slide .card-content {
+    align-items: center;
+  }
+  .mostrar-todo .swiper-slide .image{
+    height: 150px;
+    width: 150px;
+  }
+  .mostrar-todo .before{
+    height: 45%;
+  }
+  .mostrar-todo .info-card{
+    height: 90px;
+  }
+
+  .mostrar-todo .swiper-slide .descripcion{
+    font-size: 15px;
+    width: 180px;
   }
 }

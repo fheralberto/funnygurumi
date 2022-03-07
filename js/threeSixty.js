@@ -1,5 +1,14 @@
 // Funciones para los 360°
 function threeSixty(e) {
+  let nombre;
+  if(e.target.classList.contains('fa-solid')){
+    nombre = e.target.parentNode.dataset.nombreImagen;
+    e.target.parentNode.style.pointerEvents = 'none';
+  } else {
+    nombre = e.target.dataset.nombreImagen;
+    e.target.style.pointerEvents = 'none';
+  }
+
   const seccion = document.querySelector('.mostrar-todo');
   seccion.classList.add('desvanecer');
   // Crea el html para el 360
@@ -42,6 +51,7 @@ function threeSixty(e) {
     seccion.classList.remove('desvanecer');
     animateCSS(overlay, 'zoomOut');
     setTimeout(()=>{
+      e.target.style.pointerEvents = 'auto';
       overlay.remove();
     },500);
   }
@@ -52,7 +62,7 @@ function threeSixty(e) {
   animateCSS(overlay, 'zoomIn');
   //-------------------------------------------------
 
-  const nombre = e.target.dataset.nombreImagen
+  
   const ctx = canvasElement.getContext('2d');
   const fotogramas = [];
   // Listener para cada imagen

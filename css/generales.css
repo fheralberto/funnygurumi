@@ -12,6 +12,8 @@
 
 :root{
   --morado: #3A2E57;
+  --moradoClaro: #7d2ae8;
+  --rosado: deeppink;
   --fondoMenu: wheat;
   --bordeTicket: indianRed;
   --tiempo: .5s;
@@ -19,6 +21,12 @@
 /* body::-webkit-scrollba{} */
 /* vertical-scroll::-webkit-scrollba{} */
 
+.morado{
+  background-color: var(--moradoClaro);
+}
+.rosado{
+  background-color: var(--rosado);
+}
 ::-webkit-scrollbar{
   /* Para horizontal scroll (Línea vertical)*/
   width: .5em; 
