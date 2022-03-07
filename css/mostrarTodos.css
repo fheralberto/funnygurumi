@@ -84,6 +84,7 @@
   font-size: 15px;
   font-weight: 600;
   text-align: center;
+  flex-grow: 1;
   z-index: 1;
 }
 .mostrar-todo .info-card{
@@ -151,7 +152,7 @@
     width: 120px;
   }
   .mostrar-todo .swiper-slide .card-content {
-    height: 220px;
+    height: 205px;
   }
 }
 @media (min-width: 414px) and (orientation: portrait){
@@ -184,7 +185,7 @@
   .mostrar-todo .swiper-slide .descripcion{
     font-size: 12px;
     width: 100px;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     padding-top: 11px;
   }
   .mostrar-todo .before{
