@@ -19,5 +19,5 @@ const datosGaleria = [
   { 'nombre': '03', 'autor': 'norma', 'alt': 'Reno verde', 'disp': true },
   { 'nombre': '02', 'autor': 'norma', 'alt': 'Patito', 'disp': true },
   { 'nombre': '01', 'autor': 'norma', 'alt': 'Cochinito', 'disp': true },
-  { 'nombre': '201', 'autor': 'rosalía', 'alt': 'Bolsa tipo smokin', 'disp': true }
+  { 'nombre': '201', 'autor': 'rosalía', 'alt': 'Bolsa tipo smokin y un nombre largo', 'disp': true }
 ]
