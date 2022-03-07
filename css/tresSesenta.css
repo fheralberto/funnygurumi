@@ -27,17 +27,6 @@
   max-height: 100vh;
   /* border-radius: 50%; */
 }
-@media (orientation: portrait){
-  .canvas{
-    max-height: 100vh;
-  }
-}
-@media (orientation: landscape){
-  .canvas{
-    max-width: 100vw;
-  }
-}
-
 
 /* input type range */
 .rango {

@@ -151,17 +151,17 @@
     height: 120px;
     width: 120px;
   }
-  .mostrar-todo .swiper-slide .card-content {
+  /* .mostrar-todo .swiper-slide .card-content {
     height: 205px;
-  }
+  } */
 }
 @media (min-width: 414px) and (orientation: portrait){
-  .mostrar-todo .swiper-slide .image {
+  /* .mostrar-todo .swiper-slide .image {
     height: 150px;
     width: 150px;
-  }
+  } */
   .mostrar-todo .swiper-slide .card-content {
-    height: 240px;
+    height: 205px;
   }
 }
 @media (min-height: 812px) and (orientation: portrait){
