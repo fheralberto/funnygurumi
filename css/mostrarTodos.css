@@ -165,8 +165,15 @@
   }
 }
 @media (min-height: 812px) and (orientation: portrait){
-  .mostrar-todo .swiper-slide{
+  /* .mostrar-todo .swiper-slide{
     align-items: center;
+  } */
+  .mostrar-todo .swiper-slide .image {
+    height: 150px;
+    width: 150px;
+  }
+  .mostrar-todo .swiper-slide .card-content {
+    height: 250px;
   }
 }
 
