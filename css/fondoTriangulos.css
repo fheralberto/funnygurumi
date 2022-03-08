@@ -30,3 +30,52 @@
 		conic-gradient(from 90deg at 50% 50%, var(--c2) 0 32deg, var(--c4) 0 60.5deg, var(--c3) 0 90deg, var(--c1) 0 119.5deg, var(--c5) 0 148deg, var(--c2) 0 180deg,  #fff0 0 360deg) var(--gp);
 	background-color: var(--c5);
 }
+.estrellas{
+	--u:  2.5vmin;	
+	--c1: #c69b40;
+	--c2: #ac7f1f;
+	--c3: #9c731b;
+	--c4: #8a6619;	
+	--gp: 50%/calc(var(--u) * 10) calc(var(--u) * 6);
+	height: 100vh;
+	background: 
+		conic-gradient(from 213deg at 20% 50%, var(--c3) 0 111deg, #fff0 0 100%) var(--gp),		
+		conic-gradient(from 34deg at 80% 50%, var(--c1) 0 111deg, #fff0 0 100%) var(--gp),	
+		conic-gradient(from 0deg at 50% 50%, var(--c3) 0 30deg, var(--c1) 0 60deg,  var(--c4) 0 90deg, var(--c2) 0 122deg, var(--c4) 0 150deg, var(--c3) 0 180deg, var(--c1) 0 210deg, var(--c4) 0 240deg, var(--c1) 0 270deg, var(--c4) 0 301deg,  var(--c2) 0 331deg, var(--c1) 0 360deg) var(--gp);
+}
+.moutains-picos{
+	--u:  2vmin;	
+	--c1: #b78cff;
+	--c2: #9d6fe9;
+	--c3: #8f64d4;
+	--c4: #7e59bb;	
+	--gp: 50%/calc(var(--u) * 6) calc(var(--u) * 12);
+	height: 100vh;
+	background: 
+		conic-gradient(from -45deg at 50% 25%, var(--c2) 0 90deg, #fff0 0 100%) var(--gp),
+		conic-gradient(from -45deg at 50% 50%, var(--c3) 0 90deg, #fff0 0 100%) var(--gp),
+		conic-gradient(from -45deg at 50% 75%, var(--c1) 0 90deg, #fff0 0 100%) var(--gp),
+		conic-gradient(from -45deg at 50% 100%, var(--c4) 0 90deg, #fff0 0 100%) var(--gp),
+		var(--c2);
+}
+.doble-cuadro{
+	--u: 2vmin; /* change size */
+	--c1: #673ab7;
+		--c2: #5c379f;
+	--s1: #0002;
+		--gp: 50%/calc(var(--u) * 10) calc(var(--u) * 10);
+	height: 100vh;
+	background: 
+	repeating-conic-gradient(from 0deg at 50% 13.75%, var(--s1) 0 20.55%, #fff0 21.05% 79.13%, var(--s1) 79.63% 100% ) var(--gp), 
+	repeating-conic-gradient(from 0deg at 50% 50%, #fff0 0 25%, var(--s1) 25% 29%, #fff0 30% 70%, var(--s1) 71% 75%, #fff0 75% 100%) var(--gp), 
+	repeating-conic-gradient(from 0deg at 50% 50%, var(--c1) 0 25%, var(--c2) 0% 50%, var(--c1) 0 75%, var(--c2) 0% 100% ) var(--gp);
+}
+.piramides{
+	/* Fondo pirámides */
+	background: conic-gradient(from 45deg, 
+	#561a16 25%, 
+	#6a201b 0% 50%, 
+	#a7332b 0% 75%, 
+	#d45d55 0%) 
+	50%/ 20px 20px;
+}

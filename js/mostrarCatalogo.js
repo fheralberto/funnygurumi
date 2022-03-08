@@ -1,6 +1,6 @@
 function mostrarCatalogo(menu, menuBtn){
   const seccionCatalogo = document.createElement('section');
-  seccionCatalogo.classList.add('catalogo');
+  seccionCatalogo.classList.add('catalogo', 'fondo-triangulos');
   // Slider de la imagen grande
   const mySwiper2 = document.createElement('div');
   mySwiper2.classList.add('swiper', 'mySwiper2');

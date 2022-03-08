@@ -36,7 +36,8 @@ function threeSixty(e) {
   divFiguras.appendChild(divCard);
 
   const overlay = document.createElement('DIV');
-  overlay.classList.add('overlay');
+  overlay.classList.add('threeSixty');
+  // overlay.classList.add('threeSixty', 'estrellas');
   overlay.appendChild(divFiguras);
   
   //botón para cerrar la imagen

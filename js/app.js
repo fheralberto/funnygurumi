@@ -22,6 +22,14 @@ const mediaQueryList = [
 let hijos = galeria.childNodes.length
 let mostrar = true;
 
+const listaFondos = [
+	'doble-cuadro',
+	'moutains-picos',
+	'estrellas',
+	'fondo-triangulos',
+  'piramides'
+];
+
 // -------------------------------------------
 function iniciar(){
   menu();
