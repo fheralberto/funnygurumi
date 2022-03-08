@@ -190,9 +190,9 @@
     flex-grow: 1;
     padding-top: 11px;
   }
-  /* .mostrar-todo .before{
+  .mostrar-todo .before{
     height: 45%;
-  } */
+  }
 }
 @media (orientation: landscape) and (min-height: 320px){
   .mostrar-todo .before{
