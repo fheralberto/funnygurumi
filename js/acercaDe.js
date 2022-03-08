@@ -114,9 +114,9 @@ function acercaDe(menu){
 
   //Se le agrega el evento para cerrar el catalogo---------
   btnCerrarX.onclick = () => {
+    animateCSS(btnCerrarX, 'fadeOutTopRight');
     contenedorSeccion.classList.remove('abierto');
     acercaDeCubierta.classList.remove('abierto');
-    // animateCSS(contenedorSeccion, 'fadeOutDownBig');
     setTimeout(()=>{
       document.querySelector('.nav-about').style.pointerEvents = 'auto';
       contenedorSeccion.remove();

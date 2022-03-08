@@ -53,7 +53,8 @@
 }
 
 .contenedor-contenido .btn-cerrar-x{
-  top: -5px;
+  position: fixed;
+  /* top: -5px; */
 }
 
 /* -------------Animación---------------- */
