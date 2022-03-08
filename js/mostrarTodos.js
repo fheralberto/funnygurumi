@@ -77,11 +77,11 @@ function mostrarTodos() {
     if(imagen.autor == 'norma'){
       divBefore.classList.add('before', 'morado');
       divImage.classList.add('morado');
-      divBotones.classList.add('morado');
+      divBotones.classList.add('rosado');
     } else {
       divBefore.classList.add('before', 'rosado');
       divImage.classList.add('rosado');
-      divBotones.classList.add('rosado');
+      divBotones.classList.add('morado');
     }
     divSwiperSlide.appendChild(divBefore);
   });

@@ -194,13 +194,13 @@
     height: 35%;
   }
 }
-@media (orientation: landscape) and (min-height: 360px){
+@media (orientation: landscape) and (min-height: 350px){
   .mostrar-todo .before{
     height: 40%;
   }
 }
 
-@media (orientation: landscape) and (min-height: 375px){
+@media (orientation: landscape) and (min-height: 370px){
   .mostrar-todo .swiper-slide{
     align-items: center;
   }
