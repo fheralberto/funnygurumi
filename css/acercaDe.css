@@ -52,9 +52,16 @@
   transition: opacity var(--tiempo) ease-out;
 }
 
-.contenedor-contenido .btn-cerrar-x{
+/* botón cerrar */
+.contenedor-seccion .contenedor-btn{
   position: fixed;
-  /* top: -5px; */
+  top: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  max-width: 1080px;
+  margin: 0 auto;
+  background-color: blue;
 }
 
 /* -------------Animación---------------- */

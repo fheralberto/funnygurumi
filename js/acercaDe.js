@@ -106,8 +106,14 @@ function acercaDe(menu){
   divParrafos.appendChild(parrafo2);
 
   //botón para cerrar acercaDe
+  const contenedorBtn = document.createElement('div');
+  contenedorBtn.classList.add('contenedor-btn');
+  contenedorSeccion.appendChild(contenedorBtn);
+
   const btnCerrarX = document.createElement('div');
   btnCerrarX.classList.add('btn-cerrar-x');
+  contenedorBtn.appendChild(btnCerrarX);
+
   const x = document.createElement('div');
   x.classList.add('x');
   btnCerrarX.appendChild(x);
@@ -128,8 +134,8 @@ function acercaDe(menu){
   }
 
   main.appendChild(acercaDeCubierta);
-  divContenido.appendChild(btnCerrarX);
   main.appendChild(contenedorSeccion);
+  animateCSS(contenedorBtn, 'fadeInTopRight');
 
 setTimeout(()=>{
   acercaDeCubierta.classList.add('abierto');
