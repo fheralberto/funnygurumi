@@ -194,13 +194,13 @@
     height: 45%;
   }
 }
-/* @media (orientation: landscape) and (min-height: 350px){
+@media (orientation: landscape) and (min-height: 320px){
   .mostrar-todo .before{
-    height: 42%;
+    height: 35%;
   }
-} */
+}
 
-@media (orientation: landscape) and (min-height: 370px){
+@media (orientation: landscape) and (min-height: 375px){
   .mostrar-todo .swiper-slide{
     align-items: center;
   }
@@ -211,9 +211,9 @@
     height: 130px;
     width: 130px;
   }
-  /* .mostrar-todo .before{
+  .mostrar-todo .before{
     height: 45%;
-  } */
+  }
   .mostrar-todo .info-card{
     height: 90px;
   }
