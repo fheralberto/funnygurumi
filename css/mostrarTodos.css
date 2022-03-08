@@ -56,7 +56,7 @@
 
   height: 90px;
   width: 90px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 .mostrar-todo .swiper-slide .image img {
   height: 100%;
@@ -78,7 +78,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 10px 20px;
   /* height: 170px; */
 
   /* margin-bottom: 15px; */
@@ -89,6 +89,7 @@
   font-weight: 600;
   /* text-align: center; */
   z-index: 1;
+  flex-grow: 1;
 
   /* display: none; */
 }
@@ -97,7 +98,7 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  height: 60px;
+  height: 65px;
 }
 
 .mostrar-todo .swiper-slide .botones {
@@ -157,24 +158,22 @@
     height: 120px;
     width: 120px;
   }
-  .mostrar-todo .swiper-slide .card-content {
-    height: 220px;
-  }
+  /* .mostrar-todo .swiper-slide .card-content {
+    height: 200px;
+  } */
 }
 @media (min-width: 414px) and (orientation: portrait){
   .mostrar-todo .swiper-slide .image {
-    height: 150px;
-    width: 150px;
+    /* height: 150px;
+    width: 150px; */
+    margin-bottom: 10px
   }
-  /* .mostrar-todo .swiper-slide .descripcion{
-    display: block;
+  /* .mostrar-todo .swiper-slide .card-content {
+    height: 230px;
   } */
-  .mostrar-todo .swiper-slide .card-content {
-    height: 240px;
-  }
-  .mostrar-todo .info-card{
+  /* .mostrar-todo .info-card{
     height: 170px;
-  }
+  } */
 }
 @media (min-height: 812px) and (orientation: portrait){
   .mostrar-todo .swiper-slide{
@@ -193,6 +192,7 @@
     height: auto;
 
     margin: 0;
+    padding: 10px;
   }
   .mostrar-todo .swiper-slide .image{
     margin: 0;
@@ -225,7 +225,7 @@
     width: 130px;
   }
   .mostrar-todo .before{
-    height: 45%;
+    height: 40%;
   }
   .mostrar-todo .info-card{
     height: 90px;
