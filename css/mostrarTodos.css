@@ -191,7 +191,7 @@
     padding-top: 11px;
   }
   .mostrar-todo .before{
-    height: 40%;
+    height: 45%;
   }
 }
 /* @media (orientation: landscape) and (min-height: 350px){
@@ -211,9 +211,9 @@
     height: 130px;
     width: 130px;
   }
-  .mostrar-todo .before{
+  /* .mostrar-todo .before{
     height: 45%;
-  }
+  } */
   .mostrar-todo .info-card{
     height: 90px;
   }
