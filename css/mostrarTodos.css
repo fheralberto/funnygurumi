@@ -194,9 +194,9 @@
     height: 35%;
   }
 }
-@media (orientation: landscape) and (min-height: 360px){
+@media (orientation: landscape) and (min-height: 320px){
   .mostrar-todo .before{
-    height: 40%;
+    height: 37%;
   }
 }
 
