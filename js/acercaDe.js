@@ -135,7 +135,7 @@ function acercaDe(menu){
 
   main.appendChild(acercaDeCubierta);
   main.appendChild(contenedorSeccion);
-  animateCSS(contenedorBtn, 'fadeInTopRight');
+  animateCSS(btnCerrarX, 'fadeInTopRight');
 
 setTimeout(()=>{
   acercaDeCubierta.classList.add('abierto');
