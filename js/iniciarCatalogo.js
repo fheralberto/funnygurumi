@@ -3,6 +3,7 @@ function iniciarCatalogo(){
     zoom: true,
     spaceBetween: 5,
     slidesPerView: 4,
+    lazy: true,
     freeMode: true,
     grabCursor: true,
     watchSlidesProgress: true,
@@ -24,6 +25,7 @@ function iniciarCatalogo(){
   var swiper2 = new Swiper(".mySwiper2", {
     zoom: true,
     spaceBetween: 5,
+    lazy: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",

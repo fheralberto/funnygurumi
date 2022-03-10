@@ -4,17 +4,17 @@ function mostrarCatalogo(menu, menuBtn){
   // Slider de la imagen grande
   const mySwiper2 = document.createElement('div');
   mySwiper2.classList.add('swiper', 'mySwiper2');
-  slider(seccionCatalogo, mySwiper2);
+  slider(seccionCatalogo, mySwiper2, carpeta = 'catalogo');
   // Slider de las miniaturas
   const mySwiper = document.createElement('div');
   mySwiper.classList.add('swiper', 'mySwiper');
   mySwiper.setAttribute('thumbSlider', '');
-  slider(seccionCatalogo, mySwiper, menu, menuBtn);
+  slider(seccionCatalogo, mySwiper, carpeta = 'miniaturas', menu, menuBtn);
 
   iniciarCatalogo();
 }
 
-function slider(seccionCatalogo, elSwiper, menu, menuBtn){
+function slider(seccionCatalogo, elSwiper, carpeta, menu, menuBtn){
   seccionCatalogo.appendChild(elSwiper);
   const swiperWrapper = document.createElement('div');
   swiperWrapper.classList.add('swiper-wrapper');
@@ -26,17 +26,23 @@ function slider(seccionCatalogo, elSwiper, menu, menuBtn){
     swiperWrapper.appendChild(swiperSlide);
 
     const imagen = document.createElement('img');
-    imagen.setAttribute('src', `/img/catalogo/${patron.nombre}.jpg`);
+    imagen.setAttribute('data-src', `/img/${carpeta}/${patron.nombre}.jpg`);
+    imagen.classList.add('swiper-lazy');
     imagen.setAttribute('alt', patron.nombre);
+
+    const lazy = document.createElement('div');
+    lazy.classList.add('swiper-lazy-preloader', 'swiper-lazy-preloader-white');
 
     if(elSwiper.classList.contains('mySwiper2')){
       const swiperZoom = document.createElement('div');
       swiperZoom.classList.add('swiper-zoom-container'); //-mySwiper2
       // Insertando elementos
       swiperZoom.appendChild(imagen);
+      swiperZoom.appendChild(lazy);
       swiperSlide.appendChild(swiperZoom);
     } else {
       swiperSlide.appendChild(imagen);
+      swiperSlide.appendChild(lazy);
     }
   });
 
