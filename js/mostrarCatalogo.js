@@ -28,7 +28,7 @@ function slider(seccionCatalogo, elSwiper, carpeta, menu, menuBtn){
     const imagen = document.createElement('img');
     imagen.setAttribute('data-src', `/img/${carpeta}/${patron.nombre}.jpg`);
     imagen.classList.add('swiper-lazy');
-    imagen.setAttribute('alt', patron.nombre);
+    imagen.setAttribute('alt', patron.descripcion);
 
     const lazy = document.createElement('div');
     lazy.classList.add('swiper-lazy-preloader', 'swiper-lazy-preloader-white');
@@ -68,6 +68,7 @@ function slider(seccionCatalogo, elSwiper, carpeta, menu, menuBtn){
     // btnCerrarX.remove();
     animateCSS(seccionCatalogo, 'fadeOutDownBig');
     setTimeout(()=>{
+      document.querySelector('.patrones').style.pointerEvents = 'auto';
       seccionCatalogo.remove();
     }, 500);
 

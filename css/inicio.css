@@ -61,14 +61,13 @@ main{
 }
 .boton
 {
-  bottom: 10px;
+  bottom: 9%;
   padding: 2px 17px;
   background-image: url('/img/bgb.png');
   animation: blink 10s -6s infinite;
   cursor: pointer;
   z-index: 10;
 }
-
 
 @keyframes blink{
   20%, 24%, 55%{
@@ -126,7 +125,6 @@ main .desvanecer{
 }
 .galeria_item:nth-of-type(3n + 1) {
   background: linear-gradient(135deg, cyan, blue);
-  /* color: gray; */
 }
 .galeria_item:nth-of-type(5n + 1) {
   background: linear-gradient(135deg, chartreuse, green);
@@ -156,6 +154,14 @@ svg#curvas path{
 }
 
 /* Media queries */
+@media (orientation: landscape) and (max-height: 413px){
+  .boton
+  {
+    bottom: 15%;
+  }
+}
+
+/* Hexágonos */
 @media(min-width: 168px){
   .galeria {
     /* padding-bottom: 32px; */

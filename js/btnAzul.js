@@ -51,7 +51,6 @@ function reiniciar(seccion) {
       queriesListeners('De regreso');
     }
   } else { // Menú abierto
-    console.log('Menú abierto');
     document.querySelector('.navGaleria').style.pointerEvents = 'auto';
   }
   botonMenu.classList.remove('desvanecer');

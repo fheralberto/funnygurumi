@@ -15,6 +15,7 @@ function menu(){
   // botonMenu.classList.add('menu-btn');
 
   // -----------Links---------
+  // Sobre nosotros__________________________________________
   const navAbout = document.createElement('div');
   navAbout.classList.add('link', 'nav-about');
   navAbout.textContent = 'Sobre nosotros';
@@ -29,6 +30,7 @@ function menu(){
     acercaDe(menu);
   });
 
+  // Leyenda_________________________________________
   const navLeyenda = document.createElement('div');
   navLeyenda.classList.add('link', 'navLeyenda');
   navLeyenda.textContent = 'Leyenda';
@@ -43,6 +45,7 @@ function menu(){
     mostrarLeyenda(menu);
   });
 
+  // Nuestro trabajo______________________________
   const navGaleria = document.createElement('div');
   navGaleria.classList.add('link', 'navGaleria');
   navGaleria.textContent = 'Nuestro trabajo';
@@ -55,9 +58,10 @@ function menu(){
     ocultar();
   });
 
+  // Patrones________________________________________
   const navCatalogo = document.createElement('div');
-  navCatalogo.classList.add('link');
-  navCatalogo.textContent = 'Ideas ';
+  navCatalogo.classList.add('link', 'patrones');
+  navCatalogo.textContent = 'Patrones ';
 
   const iconoFoco = document.createElement('i');
   iconoFoco.classList.add('fa-solid', 'fa-lightbulb');
@@ -66,11 +70,14 @@ function menu(){
   const bordeCatalogo = document.createElement('div');
   bordeCatalogo.classList.add('borde-ticket')
   bordeCatalogo.appendChild(navCatalogo);
-  // Agregando evento------
+  // Agregando evento-------------
   bordeCatalogo.addEventListener('click', ()=>{
+    navCatalogo.style.pointerEvents = 'none';
     menu.classList.add('desvanecer');
     botonMenu.classList.add('desvanecer');
-    mostrarCatalogo(menu, botonMenu);
+    buscarPatrones(menu, botonMenu);
+
+    // mostrarCatalogo(menu, botonMenu);
   })
   
   navegacion.appendChild(bordeAbout);
