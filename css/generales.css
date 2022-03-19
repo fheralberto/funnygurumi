@@ -20,7 +20,9 @@
 }
 /* body::-webkit-scrollba{} */
 /* vertical-scroll::-webkit-scrollba{} */
-
+.mb{
+  margin-bottom: 1em;
+}
 .morado{
   background-color: var(--moradoClaro);
 }

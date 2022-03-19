@@ -1,6 +1,6 @@
 function buscarPatrones(menu, menuBtn){
   let resultado = catalogoPatrones;
-  const criterios = ['todo', 'princesa', 'comic'];
+  const criterios = ['Seleccione', 'Todo', 'Princesa', 'Comic', 'Hecho', 'Yoda'];
 
   const seccionBuscar = document.createElement('div');
   seccionBuscar.classList.add('seccion-buscar');
@@ -34,22 +34,22 @@ function buscarPatrones(menu, menuBtn){
   elemBusqueda.classList.add('elem-busqueda');
   contenido.appendChild(elemBusqueda);
 
-  const barraBoton = document.createElement('div');
-  barraBoton.classList.add('barra-boton');
-  elemBusqueda.appendChild(barraBoton);
+  const barraSelect = document.createElement('div');
+  barraSelect.classList.add('barra-select');
+  elemBusqueda.appendChild(barraSelect);
 
-  // Área para los resultados------------------
-  const items = document.createElement('div');
-  items.classList.add('items');
-  elemBusqueda.appendChild(items);
+  // Select de etiquetas
+  const select = document.createElement('select');
+  select.classList.add('select-buscar');
+  barraSelect.appendChild(select);
 
   // Barra de búsqueda
   const barraBuscar = document.createElement('div');
   barraBuscar.classList.add('barra-buscar');
-  barraBoton.appendChild(barraBuscar);
+  barraSelect.appendChild(barraBuscar);
 
     // ícono de búsqueda
-  const iconoBuscar = document.createElement('form');
+  const iconoBuscar = document.createElement('div');
   iconoBuscar.classList.add('icono-buscar');
   barraBuscar.appendChild(iconoBuscar);
 
@@ -62,58 +62,61 @@ function buscarPatrones(menu, menuBtn){
   inputBuscar.classList.add('input-buscar');
   barraBuscar.appendChild(inputBuscar);
 
-  // Select de etiquetas
-  const select = document.createElement('select');
-  select.classList.add('select-buscar');
-  barraBoton.appendChild(select);
+  // Área para los resultados------------------
+  const items = document.createElement('div');
+  items.classList.add('items');
+  elemBusqueda.appendChild(items);
 
   // Llenando el select
-  criterios.forEach(criterio => {
-    const opcion = document.createElement('option');
-    opcion.value = criterios.indexOf(criterio);
-    opcion.textContent = criterio
-    select.appendChild(opcion)
-  });
+  actualizarSelectCriterios(criterios, select);
 
-  // _________________________________________________________
   // Al cambiar el valor del buscador
   inputBuscar.addEventListener('change', e =>{
-    resultado = filtrarPatrones(e.target.value.toLowerCase());
-    if(!resultado.length){
-      resultado = catalogoPatrones;
-      inputBuscar.value = "";
-    }
-    listaPatrones(items, resultado);
-    // select.textContent = `Ver ${resultado.length} como galería`;
+
+      resultado = filtrarPatrones(e.target.value.toLowerCase());
+      if(resultado.length>0 && !criterios.includes(e.target.value)){
+        criterios.push(e.target.value);
+        actualizarSelectCriterios(criterios, select);
+      } else {
+        select.value = '0';
+      }
+      if(inputBuscar.value == ''){
+        limpiaItems(items);
+        items.classList.remove('mb');
+      } else {
+        listaPatrones(items, resultado);
+      }
   })
-  // _________________________________________________________
+
+  // Al dar click al buscador
+  inputBuscar.addEventListener('click', ()=> inputBuscar.select());
+
+  // Evento para que al presionar enter cambie el foco
+  inputBuscar.addEventListener('keyup', e => {
+    if (e.code == 'Enter') {
+      select.focus();
+      inputBuscar.select();
+    }
+  });
 
   // evento click al cambiar el valor del select
   select.addEventListener('change', e =>{
     const indice = e.target.selectedIndex
     const seleccionado = e.target.options[indice].textContent
-    console.log(indice);
-    console.log(e.target.options[indice].textContent);
     resultado = filtrarPatrones(seleccionado.toLowerCase());
-    console.log(resultado);
+    // console.log(indice);
+    // console.log(seleccionado);
 
     if(!resultado.length){
       resultado = catalogoPatrones;
-
       const itemDescripcion = document.createElement('p');
       itemDescripcion.classList.add('item-descripcion');
       itemDescripcion.textContent = 'No hay resultados';
       items.appendChild(itemDescripcion);
     }
+    inputBuscar.value = seleccionado;
     listaPatrones(items, resultado);
     // mostrarCatalogo(menu, botonMenu, resultado);
-  });
-
-  // Evento para que al presionar enter se posicione el foco en el botón
-  inputBuscar.addEventListener('keyup', e => {
-    if (e.code == 'Enter') {
-      select.focus();
-    }
   });
 
   //botón para cerrar el catálogo
@@ -130,14 +133,13 @@ function buscarPatrones(menu, menuBtn){
       seccionBuscar.remove();
       document.querySelector('.patrones').style.pointerEvents = 'auto';
     }, 500);
-    
     menu.classList.remove('desvanecer');
     menuBtn.classList.remove('desvanecer');
   }
 
   encabezado.appendChild(btnCerrarX);
   main.appendChild(seccionBuscar);
-  inputBuscar.focus();
+  select.focus();
   animateCSS(seccionBuscar, 'fadeIn');
 
   // Mueve la luz sigiendo al cursor
@@ -151,28 +153,57 @@ function buscarPatrones(menu, menuBtn){
   // window.addEventListener('resize', ()=>acomodarLuz(luz, titulo));
 }
 
+function actualizarSelectCriterios(criterios, select){
+  while(select.firstChild){
+    select.removeChild(select.firstChild);
+  }
+  criterios.forEach(criterio => {
+    const opcion = document.createElement('option');
+    opcion.value = criterios.indexOf(criterio);
+    if(opcion.value == 0){
+      opcion.setAttribute('disabled', '');
+      opcion.setAttribute('selected', '');
+    }
+    opcion.textContent = criterio
+    select.appendChild(opcion);
+  });
+}
+
 function listaPatrones(items, resultadoBuscar){
   limpiaItems(items);
-  resultadoBuscar.forEach(patron => {
+  items.classList.add('mb');
+  if(resultadoBuscar.length > 0){
+    resultadoBuscar.forEach(patron => {
+      const item = document.createElement('div');
+      item.classList.add('item');
+      items.appendChild(item);
+  
+      const itemImagen = document.createElement('img');
+      itemImagen.setAttribute('loading', 'lazy');
+      itemImagen.setAttribute("src", `/img/miniaturas/${patron.nombre}.jpg`);
+      itemImagen.setAttribute("alt", patron.descripcion);
+      //Le crea atributo data-item-id
+      itemImagen.dataset.itemId = patron.nombre;
+      item.appendChild(itemImagen)
+      // Evento para ampliar la imagen
+      itemImagen.onclick = ampliarPatron;
+  
+      const itemDescripcion = document.createElement('p');
+      itemDescripcion.classList.add('item-descripcion');
+      itemDescripcion.textContent = patron.descripcion;
+      item.appendChild(itemDescripcion);
+    });
+  } else {
     const item = document.createElement('div');
     item.classList.add('item');
+
+    const itemResultado = document.createElement('p');
+    itemResultado.classList.add('item-descripcion');
+    itemResultado.textContent = 'No hay resultados';
+    item.appendChild(itemResultado);
+    
     items.appendChild(item);
-
-    const itemImagen = document.createElement('img');
-    itemImagen.setAttribute('loading', 'lazy');
-    itemImagen.setAttribute("src", `/img/miniaturas/${patron.nombre}.jpg`);
-    itemImagen.setAttribute("alt", patron.descripcion);
-    //Le crea atributo data-item-id
-    itemImagen.dataset.itemId = patron.nombre;
-    item.appendChild(itemImagen)
-    // Evento para ampliar la imagen
-    itemImagen.onclick = ampliarPatron;
-
-    const itemDescripcion = document.createElement('p');
-    itemDescripcion.classList.add('item-descripcion');
-    itemDescripcion.textContent = patron.descripcion;
-    item.appendChild(itemDescripcion);
-  });
+  }
 }
 
 // ___________________________________________________________
@@ -181,7 +212,6 @@ function filtrarPatrones(valorInput){
   const resultadoBuscar = catalogoPatrones.filter(patron=>
     patron.etiquetas.split(",").includes(valorInput) ? patron : ""
   );
-  console.log(resultadoBuscar);
   return resultadoBuscar;
 }
 // ___________________________________________________________

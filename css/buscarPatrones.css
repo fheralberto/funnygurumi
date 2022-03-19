@@ -42,6 +42,7 @@
 .seccion-buscar .encabezado-buscar{
   position: static;
   width: 90%;
+  max-width: 1080px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,7 +74,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2em;
+  /* margin-bottom: 2em; */
   overflow: auto;
 }
 .contenido-buscar{
@@ -84,35 +85,37 @@
   width: 100%;
   gap: 1em;
   background-color: #ecf0f3;
-  padding-bottom: 1em;
+  /* padding-bottom: 1em; */
 }
 
 /* Contiene la barra de la búsqueda  y el botón buscar */
-.seccion-buscar .elem-busqueda .barra-boton{
+.seccion-buscar .elem-busqueda .barra-select{
   top: 0;
   position: sticky;
 
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 1em;
+  /* flex-wrap: wrap; */
+  /* align-items: center; */
+  justify-content: center;
+  /* gap: 1em; */
   background-color: #ecf0f3;
-  padding: 1em 1em 0 1em;
+  /* padding: 1em 1em 0 1em; */
+  padding: 1em;
 }
 /* Barra de búsqueda */
 .seccion-buscar .barra-buscar{
   position: relative;
   display: flex;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   align-items: center;
   background: none;
   border-radius: 2.3em;
 }
 .seccion-buscar .icono-buscar{
   position: absolute;
-  padding-left: .7em;
+  right: 0;
+  padding-right: .7em;
 }
 .seccion-buscar svg{
   height: 25px;
@@ -124,13 +127,15 @@
 
 /* input buscar */
 .seccion-buscar .input-buscar{
-  width: 100%;
+  /* width: 100%; */
   border: none;
   outline-color: #ffa500;
   /* outline: none; */
-  border-radius: 1em;
-  font-size: 1.4em;
-  padding: .5em 1em .5em 2em;
+  /* border-radius: 1em; */
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  /* font-size: 1.4em; */
+  padding: .5em 3em .5em 1em;
   font-family: inherit;
   color: var(--moradoClaro);
   background: none;
@@ -154,8 +159,10 @@
   background: none;
   border: none;
   outline-color: #ffa500;
-  padding: 1em;
+  padding: 0 .5em;
   /* border-radius: 2em; */
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
   color: #757575;
   box-shadow: -3px -3px 7px #ffffff, 
   3px 3px 5px #ceced1;
@@ -185,7 +192,7 @@ option:hover{
   flex-wrap: wrap;
   justify-content: center;
   gap: 1em;
-  margin-top: 1em;
+  /* margin-top: 1em; */
 }
 .seccion-buscar .elem-busqueda .item{
   display: flex;
@@ -199,7 +206,7 @@ option:hover{
   text-transform: capitalize;
   text-shadow: none;
   color: #757575;
-  padding: 0 1em;
+  padding: .5em 1em;
 }
 .seccion-buscar .elem-busqueda .item img{
   height: 200px;
@@ -223,8 +230,10 @@ option:hover{
   }
 }
 @media (orientation: landscape) and (max-height: 600px){
-  .seccion-buscar .encabezado-buscar,
-  .seccion-buscar .elem-busqueda .barra-boton{
+  /* .seccion-buscar .elem-busqueda .barra-select, */
+  .seccion-buscar .encabezado-buscar
+  {
     display: none;
   }
+
 }
