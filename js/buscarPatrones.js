@@ -1,5 +1,6 @@
 function buscarPatrones(menu, menuBtn){
-  let resultado = '';
+  let resultado = catalogoPatrones;
+  const criterios = ['todo', 'princesa', 'comic'];
 
   const seccionBuscar = document.createElement('div');
   seccionBuscar.classList.add('seccion-buscar');
@@ -48,7 +49,7 @@ function buscarPatrones(menu, menuBtn){
   barraBoton.appendChild(barraBuscar);
 
     // ícono de búsqueda
-  const iconoBuscar = document.createElement('div');
+  const iconoBuscar = document.createElement('form');
   iconoBuscar.classList.add('icono-buscar');
   barraBuscar.appendChild(iconoBuscar);
 
@@ -61,46 +62,57 @@ function buscarPatrones(menu, menuBtn){
   inputBuscar.classList.add('input-buscar');
   barraBuscar.appendChild(inputBuscar);
 
-  // botón para mostrar el resultado como galería
-  const boton = document.createElement('button');
-  boton.classList.add('boton-buscar');
-  boton.textContent = `Mostrar todos`;
-  barraBoton.appendChild(boton);
+  // Select de etiquetas
+  const select = document.createElement('select');
+  select.classList.add('select-buscar');
+  barraBoton.appendChild(select);
+
+  // Llenando el select
+  criterios.forEach(criterio => {
+    const opcion = document.createElement('option');
+    opcion.value = criterios.indexOf(criterio);
+    opcion.textContent = criterio
+    select.appendChild(opcion)
+  });
 
   // _________________________________________________________
-  // Al salir del input
+  // Al cambiar el valor del buscador
   inputBuscar.addEventListener('change', e =>{
     resultado = filtrarPatrones(e.target.value.toLowerCase());
     if(!resultado.length){
-      resultado = '';
+      resultado = catalogoPatrones;
       inputBuscar.value = "";
-      boton.textContent = `No hay resultados`;
-      setTimeout(()=>{
-        boton.textContent = `mostrar todos`;
-      },3000);
     }
     listaPatrones(items, resultado);
-    boton.textContent = `Ver ${resultado.length} en galería`;
+    // select.textContent = `Ver ${resultado.length} como galería`;
   })
   // _________________________________________________________
 
-  // evento click al presionar el botón buscar
-  boton.addEventListener('click', ()=>{
-    resultado = filtrarPatrones(e.target.value.toLowerCase());
+  // evento click al cambiar el valor del select
+  select.addEventListener('change', e =>{
+    const indice = e.target.selectedIndex
+    const seleccionado = e.target.options[indice].textContent
+    console.log(indice);
+    console.log(e.target.options[indice].textContent);
+    resultado = filtrarPatrones(seleccionado.toLowerCase());
+    console.log(resultado);
+
     if(!resultado.length){
-      resultado = '';
-      inputBuscar.value = "";
-      boton.textContent = `No hay resultados`;
+      resultado = catalogoPatrones;
+
+      const itemDescripcion = document.createElement('p');
+      itemDescripcion.classList.add('item-descripcion');
+      itemDescripcion.textContent = 'No hay resultados';
+      items.appendChild(itemDescripcion);
     }
     listaPatrones(items, resultado);
-    boton.textContent = `Ver ${resultado.length} en galería`;
     // mostrarCatalogo(menu, botonMenu, resultado);
   });
 
   // Evento para que al presionar enter se posicione el foco en el botón
   inputBuscar.addEventListener('keyup', e => {
     if (e.code == 'Enter') {
-      boton.focus();
+      select.focus();
     }
   });
 
@@ -165,7 +177,7 @@ function listaPatrones(items, resultadoBuscar){
 
 // ___________________________________________________________
 function filtrarPatrones(valorInput){
-  console.log(valorInput);
+  // console.log(valorInput);
   const resultadoBuscar = catalogoPatrones.filter(patron=>
     patron.etiquetas.split(",").includes(valorInput) ? patron : ""
   );
