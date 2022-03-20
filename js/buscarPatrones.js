@@ -74,27 +74,29 @@ function buscarPatrones(menu, menuBtn){
   inputBuscar.addEventListener('change', e =>{
     const textoBuscar = e.target.value.toLowerCase().trim();
     resultado = filtrarPatrones(textoBuscar);
-    // Reemplaza el includes para minimizar cada criterio
-    let existe = true;
-    criterios.forEach(criterio=>{
-      if(criterio.toLowerCase() === textoBuscar){
-        existe = false;
-      }
-    });
-    
     // Capitalizar la primera letra del string
     const capitalizado = capitalizarPrimeraLetra(textoBuscar);
-    if(resultado.length>0 && existe){
-      criterios.push(capitalizado);
-      actualizarSelectCriterios(criterios, select);
+    // Reemplaza el includes para minimizar cada criterio
+    let noExiste = true;
+    criterios.forEach(criterio=>{
+      if(criterio.toLowerCase() === textoBuscar){
+        noExiste = false;
+      }
+    });
+    // if(resultado.length>0 && noExiste){
+    if(resultado.length>0){
+      inputBuscar.value = `${capitalizado} (${resultado.length})`
+      if(noExiste){
+        criterios.push(capitalizado);
+        actualizarSelectCriterios(criterios, select);
+      }
     } else {
-      select.value = '0';
+      select.value = '0'; // Seleccione
     }
     if(inputBuscar.value == ''){
       limpiaItems(items);
       items.classList.remove('mb');
     } else {
-      // inputBuscar.value = `${capitalizado} (${resultado.length})`
       listaPatrones(items, resultado);
     }
   })
@@ -125,7 +127,7 @@ function buscarPatrones(menu, menuBtn){
       itemDescripcion.textContent = 'No hay resultados';
       items.appendChild(itemDescripcion);
     }
-    inputBuscar.value = seleccionado;
+    inputBuscar.value = `${seleccionado} (${resultado.length})`;
     listaPatrones(items, resultado);
     // mostrarCatalogo(menu, botonMenu, resultado);
   });
