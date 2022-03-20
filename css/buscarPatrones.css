@@ -92,22 +92,18 @@
 .seccion-buscar .elem-busqueda .barra-select{
   top: 0;
   position: sticky;
-
-  width: 100%;
+  /* width: 100%; */
   display: flex;
-  /* flex-wrap: wrap; */
-  /* align-items: center; */
   justify-content: center;
   /* gap: 1em; */
   background-color: #ecf0f3;
-  /* padding: 1em 1em 0 1em; */
   padding: 1em;
 }
 /* Barra de búsqueda */
 .seccion-buscar .barra-buscar{
   position: relative;
   display: flex;
-  /* flex-grow: 1; */
+  flex-grow: 1;
   align-items: center;
   background: none;
   border-radius: 2.3em;
@@ -127,7 +123,7 @@
 
 /* input buscar */
 .seccion-buscar .input-buscar{
-  /* width: 100%; */
+  width: 100%;
   border: none;
   outline-color: #ffa500;
   /* outline: none; */
@@ -156,7 +152,8 @@
 /* Botón de acción */
 .seccion-buscar .select-buscar{
   width: 100%;
-  min-width: 2em;
+  flex-grow: 1;
+  /* min-width: 2em; */
   background: none;
   border: none;
   outline-color: #ffa500;
