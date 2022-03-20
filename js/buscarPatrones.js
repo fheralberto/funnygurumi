@@ -72,20 +72,35 @@ function buscarPatrones(menu, menuBtn){
 
   // Al cambiar el valor del buscador
   inputBuscar.addEventListener('change', e =>{
+    const textoBuscar = e.target.value.toLowerCase().trim();
+    resultado = filtrarPatrones(textoBuscar);
 
-      resultado = filtrarPatrones(e.target.value.toLowerCase());
-      if(resultado.length>0 && !criterios.includes(e.target.value)){
-        criterios.push(e.target.value);
-        actualizarSelectCriterios(criterios, select);
-      } else {
-        select.value = '0';
+    let existe = true;
+    criterios.forEach(criterio=>{
+      if(criterio.toLowerCase() === textoBuscar){
+        existe = false;
       }
-      if(inputBuscar.value == ''){
-        limpiaItems(items);
-        items.classList.remove('mb');
-      } else {
-        listaPatrones(items, resultado);
-      }
+    });
+    
+    // if(resultado.length>0 && !criterios.includes(e.target.value.trim())){
+    if(resultado.length>0 && existe){
+      // Capitalizar la primera letra del string
+      function capitalizarPrimeraLetra(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }      
+      const capitalizado = capitalizarPrimeraLetra(textoBuscar);
+
+      criterios.push(capitalizado);
+      actualizarSelectCriterios(criterios, select);
+    } else {
+      select.value = '0';
+    }
+    if(inputBuscar.value == ''){
+      limpiaItems(items);
+      items.classList.remove('mb');
+    } else {
+      listaPatrones(items, resultado);
+    }
   })
 
   // Al dar click al buscador
@@ -102,7 +117,7 @@ function buscarPatrones(menu, menuBtn){
   // evento click al cambiar el valor del select
   select.addEventListener('change', e =>{
     const indice = e.target.selectedIndex
-    const seleccionado = e.target.options[indice].textContent
+    const seleccionado = e.target.options[indice].textContent;
     resultado = filtrarPatrones(seleccionado.toLowerCase());
     // console.log(indice);
     // console.log(seleccionado);
