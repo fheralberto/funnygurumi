@@ -74,7 +74,7 @@ function buscarPatrones(menu, menuBtn){
   inputBuscar.addEventListener('change', e =>{
     const textoBuscar = e.target.value.toLowerCase().trim();
     resultado = filtrarPatrones(textoBuscar);
-
+    // Reemplaza el includes para minimizar cada criterio
     let existe = true;
     criterios.forEach(criterio=>{
       if(criterio.toLowerCase() === textoBuscar){
@@ -82,14 +82,9 @@ function buscarPatrones(menu, menuBtn){
       }
     });
     
-    // if(resultado.length>0 && !criterios.includes(e.target.value.trim())){
+    // Capitalizar la primera letra del string
+    const capitalizado = capitalizarPrimeraLetra(textoBuscar);
     if(resultado.length>0 && existe){
-      // Capitalizar la primera letra del string
-      function capitalizarPrimeraLetra(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-      }      
-      const capitalizado = capitalizarPrimeraLetra(textoBuscar);
-
       criterios.push(capitalizado);
       actualizarSelectCriterios(criterios, select);
     } else {
@@ -99,6 +94,7 @@ function buscarPatrones(menu, menuBtn){
       limpiaItems(items);
       items.classList.remove('mb');
     } else {
+      // inputBuscar.value = `${capitalizado} (${resultado.length})`
       listaPatrones(items, resultado);
     }
   })
@@ -230,6 +226,10 @@ function filtrarPatrones(valorInput){
   return resultadoBuscar;
 }
 // ___________________________________________________________
+
+function capitalizarPrimeraLetra(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function limpiaItems(items){
   while(items.firstChild){

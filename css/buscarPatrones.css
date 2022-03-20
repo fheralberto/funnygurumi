@@ -156,6 +156,7 @@
 /* Botón de acción */
 .seccion-buscar .select-buscar{
   width: 100%;
+  min-width: 2em;
   background: none;
   border: none;
   outline-color: #ffa500;
