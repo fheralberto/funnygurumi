@@ -28,7 +28,7 @@
 }
 .seccion-buscar .elem-busqueda .item .item-contenido{
   transform-style: preserve-3d;
-  transition: transform 2s;
+  transition: transform 1s;
 }
 .seccion-buscar .elem-busqueda .item .item-contenido.girar-item{
   transform: rotateY(.5turn);
