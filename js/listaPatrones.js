@@ -56,15 +56,19 @@ function listaPatrones(items, resultadoBuscar){
         itemDescripcion.style.pointerEvents = 'none';
         itemImagen.style.pointerEvents = 'none';
         regresar.style.pointerEvents = 'auto';
-        itemContenido.classList.add('girar-item');
         itemImagen.classList.add('desvanecer');
+        setTimeout( ()=>{
+          itemContenido.classList.add('girar-item');
+        }, 500);
       }
       regresar.onclick = ()=>{
         itemDescripcion.style.pointerEvents = 'auto';
         itemImagen.style.pointerEvents = 'auto';
         regresar.style.pointerEvents = 'none';
         itemContenido.classList.remove('girar-item');
-        itemImagen.classList.remove('desvanecer');
+        setTimeout( ()=>{
+          itemImagen.classList.remove('desvanecer');
+        }, 1000);
       }
     });
   } else {
