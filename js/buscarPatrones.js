@@ -182,46 +182,8 @@ function actualizarSelectCriterios(criterios, select){
   });
 }
 
-function listaPatrones(items, resultadoBuscar){
-  limpiaItems(items);
-  items.classList.add('mb');
-  if(resultadoBuscar.length > 0){
-    resultadoBuscar.forEach(patron => {
-      const item = document.createElement('div');
-      item.classList.add('item');
-      items.appendChild(item);
-  
-      const itemImagen = document.createElement('img');
-      itemImagen.setAttribute('loading', 'lazy');
-      itemImagen.setAttribute("src", `/img/miniaturas/${patron.nombre}.jpg`);
-      itemImagen.setAttribute("alt", patron.descripcion);
-      //Le crea atributo data-item-id
-      itemImagen.dataset.itemId = patron.nombre;
-      item.appendChild(itemImagen)
-      // Evento para ampliar la imagen
-      itemImagen.onclick = ampliarPatron;
-  
-      const itemDescripcion = document.createElement('p');
-      itemDescripcion.classList.add('item-descripcion');
-      itemDescripcion.textContent = patron.descripcion;
-      item.appendChild(itemDescripcion);
-    });
-  } else {
-    const item = document.createElement('div');
-    item.classList.add('item');
-
-    const itemResultado = document.createElement('p');
-    itemResultado.classList.add('item-descripcion');
-    itemResultado.textContent = 'No hay resultados';
-    item.appendChild(itemResultado);
-    
-    items.appendChild(item);
-  }
-}
-
 // ___________________________________________________________
 function filtrarPatrones(valorInput){
-  // console.log(valorInput);
   const resultadoBuscar = catalogoPatrones.filter(patron=>
     patron.etiquetas.split(",").includes(valorInput) ? patron : ""
   );

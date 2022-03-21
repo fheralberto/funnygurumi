@@ -17,7 +17,7 @@ https://www.youtube.com/watch?v=3HRvb2tLqF4
 Galería de hexágonos
 https://www.youtube.com/watch?v=jDTKPSKp9dY&list=PLQ2swYBe_VzP8W7p4Pq1P4h8Jo_wjC_e4&index=36
 
-machas de pintura con hover
+manchas de pintura con hover
 https://www.youtube.com/watch?v=T8FqjoX9ew0&list=PLQ2swYBe_VzOiglLOevrNDe9-iq_U2io_&index=4
 
 slider
@@ -29,7 +29,6 @@ Este tutorial enseña cómo eliminar un detector de eventos en JavaScript.
 
 stroke-dasharray - Define la longitud del trazo
 stroke-dashoffset - Define cada cuanto aparece un trazo
-
 
 Utilice el método removeEventListener() 
 para eliminar el detector de eventos en JavaScript
