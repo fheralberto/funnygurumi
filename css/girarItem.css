@@ -45,11 +45,15 @@
   transform: rotateY(.5turn);
 }
 .seccion-buscar .elem-busqueda .item img{
-  backface-visibility: hidden;
   display: block;
   height: 200px;
   cursor: pointer;
   margin: 0 auto;
+  opacity: 1;
+  transition: opacity .5s;
+}
+.seccion-buscar .elem-busqueda .item img.desvanecer{
+  opacity: 0;
 }
 .seccion-buscar .elem-busqueda .item p,
 .seccion-buscar .elem-busqueda .item h3{

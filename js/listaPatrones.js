@@ -57,12 +57,14 @@ function listaPatrones(items, resultadoBuscar){
         itemImagen.style.pointerEvents = 'none';
         regresar.style.pointerEvents = 'auto';
         itemContenido.classList.add('girar-item');
+        itemImagen.classList.add('desvanecer');
       }
       regresar.onclick = ()=>{
         itemDescripcion.style.pointerEvents = 'auto';
         itemImagen.style.pointerEvents = 'auto';
         regresar.style.pointerEvents = 'none';
         itemContenido.classList.remove('girar-item');
+        itemImagen.classList.remove('desvanecer');
       }
     });
   } else {
