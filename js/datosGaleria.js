@@ -1,4 +1,7 @@
 const datosGaleria = [
+  { 'nombre': '113', 'autor': 'rosalía', 'alt': 'Yoda 2, René 2, Pato 2', 'disp': false },
+  { 'nombre': '112', 'autor': 'rosalía', 'alt': 'Tiana', 'disp': false },
+  { 'nombre': '111', 'autor': 'rosalía', 'alt': 'Bella', 'disp': false },
   { 'nombre': '110', 'autor': 'rosalía', 'alt': 'Rana René', 'disp': true },
   { 'nombre': '109', 'autor': 'rosalía', 'alt': 'Baby Yoda', 'disp': true },
   { 'nombre': '108', 'autor': 'rosalía', 'alt': 'Bodoque sin boca', 'disp': false },
@@ -9,6 +12,9 @@ const datosGaleria = [
   { 'nombre': '103', 'autor': 'rosalía', 'alt': 'Juan Carlos Bodoque', 'disp': false },
   { 'nombre': '102', 'autor': 'rosalía', 'alt': 'Elefante', 'disp': true },
   { 'nombre': '101', 'autor': 'rosalía', 'alt': 'Mapache', 'disp': false },
+  { 'nombre': '13', 'autor': 'norma', 'alt': 'Osito', 'disp': false },
+  { 'nombre': '12', 'autor': 'norma', 'alt': 'Ariel', 'disp': false },
+  { 'nombre': '11', 'autor': 'norma', 'alt': 'Alicia', 'disp': false },
   { 'nombre': '10', 'autor': 'norma', 'alt': 'Alcatraces', 'disp': false },
   { 'nombre': '09', 'autor': 'norma', 'alt': 'Girasol y Tulipanes', 'disp': false },
   { 'nombre': '08', 'autor': 'norma', 'alt': 'Miniom', 'disp': true },

@@ -1,11 +1,12 @@
 function mostrarGaleria(max) {
   limpiaGaleria();
   // console.log('Mostrando ', max);
+  let totalHecho = datosGaleria.length -2
 
   let lista = [];
   for (let i = 0; i < max; i++) {
     do{
-      aleatorio = aleatorioEntero(0, 19);
+      aleatorio = aleatorioEntero(0, totalHecho);
     }
     while(lista.includes(aleatorio));
     lista.push(aleatorio);
