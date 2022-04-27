@@ -59,6 +59,7 @@ function mostrarTodos() {
     divInfoCard.appendChild(divBotones);
 
     if(imagen.disp){
+      console.log(imagen.disp)
       const arrowRotate = document.createElement('i');
       arrowRotate.classList.add('fa-solid', 'fa-arrows-rotate');
       divTresSesenta.appendChild(arrowRotate);
@@ -67,12 +68,10 @@ function mostrarTodos() {
       divTresSesenta.dataset.nombreImagen = imagen.nombre;
       // Se le agrega el evento onclick -----------------------------
       divTresSesenta.onclick = threeSixty;
-    } 
-    else {
+    } else {
       divTresSesenta.disabled = true;
       divTresSesenta.classList.add('deshabilitado');
     }
-
     const divBefore = document.createElement('div');
     if(imagen.autor == 'norma'){
       divBefore.classList.add('before', 'morado');
@@ -97,7 +96,6 @@ function mostrarTodos() {
   const paginacion = document.createElement('div');
   paginacion.classList.add('swiper-pagination')
   divSwiper.appendChild(paginacion);
-
 
   // Crea botón para cerrar la sección
   const btnCerrarX = document.createElement('div');
